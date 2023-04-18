@@ -28,6 +28,7 @@ public class Mittel {
 
 
         for (int i = 0; i < args.length; i++) { // Für alle gemachten Eingaben
+            //TODO Overkill, weil im Moment angenommen werden kann, dass es nur Zahlen als Eingabe geben kann
             try { // Versuche
                 numbers[i] = Double.parseDouble(args[i]); // Die Zahlen als Double zu parsen
             } catch (NumberFormatException e) { // Wenn das nicht klappt (ein Parameter ist kein Double)
@@ -45,14 +46,14 @@ public class Mittel {
         // und durch die Anzahl teilen
         aritmetischesMittel = sum / numbers.length;
 
-        //Geo (Verfahren aus der Aufgabenstelluung übernommen)
+        //Geometrisches Mittel (Verfahren aus der Aufgabenstelluung übernommen)
         sum = 0.0;
         for (int i = 0; i < numbers.length; i++) {
             sum *= numbers[i];
         }
         geo = Math.pow(sum, 1 / numbers.length);
 
-        //Har (Verfahren aus der Aufgabenstellung übernommen)
+        //Harmonisches Mittel (Verfahren aus der Aufgabenstellung übernommen)
         sum = 0.0;
         for (int i = 0; i < numbers.length; i++) {
             sum += 1 / numbers[i];
@@ -62,9 +63,9 @@ public class Mittel {
         //Ausgaben
         System.out.println("Aritmetisches Mittel:");
         System.out.println(aritmetischesMittel);
-        System.out.println("Geo?");
+        System.out.println("Geometrisches Mittel");
         System.out.println(geo);
-        System.out.println("Har?");
+        System.out.println("Harmonisches Mittel");
         System.out.println(har);
     }
 }
