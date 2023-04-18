@@ -1,11 +1,11 @@
-/****************************************/
-/* Matthis Steinhage, Benjamin Wendt */
-/* Gruppe: Di10 */
-/* Uebungsblatt: 1, Aufgabe: 4 */
+/********************************************/
+/* Matthis Steinhage, Benjamin Wendt        */
+/* Gruppe: Di10                             */
+/* Uebungsblatt: 1, Aufgabe: 4              */
 /* Thema: Wissenswertes über Zahlen, switch */
-/* Datum: 17.04.2023 */
-/* Status: lauffaehig - nicht Dokumentiert */
-/****************************************/
+/* Datum: 17.04.2023                        */
+/* Status: lauffaehig - nicht Dokumentiert  */
+/********************************************/
 
 import java.util.Scanner;
 
@@ -45,7 +45,7 @@ public class numberKnowledge {
                     System.out.println("Über die Zahl " + Zahl + " weiß ich nichts");
             }
         System.out.println("Möchten Sie noch Infos über eine weitere Zahl erhalten, dann schreiben Sie <true>, ansonsten schreiben Sie <false>.");
-        }while (sc.nextBoolean() == true);
+        }while (sc.nextBoolean());
 
     }
 }

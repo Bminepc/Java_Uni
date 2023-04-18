@@ -29,7 +29,7 @@ public class sortLexi {
         }
 
         //Selectionsort
-        int cur_min = 0;
+        int cur_min;
         for (int i = 0; i < anzahl; i++) {
             cur_min = i;
             for (int j = i + 1; j < anzahl; j++) {

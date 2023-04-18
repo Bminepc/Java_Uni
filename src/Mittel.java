@@ -13,9 +13,9 @@ public class Mittel {
     public static void main(String[] args) {
 
         // Variablen Deklarieren und Initialisieren
-        double aritmetischesMittel = 0.0;
-        double geo = 0.0;
-        double har = 0.0;
+        double aritmetischesMittel;
+        double geo;
+        double har;
         double sum = 0.0;
         // Dies ist möglich, da die Parameter zur Laufzeit gegeben sind.
         double[] numbers = new double[args.length];
