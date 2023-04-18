@@ -1,3 +1,12 @@
+/****************************************/
+/* Matthis Steinhage, Benjamin Wendt */
+/* Gruppe: Di10 */
+/* Uebungsblatt: 1, Aufgabe: 3 */
+/* Thema: Wissenswertes über Zahlen, switch */
+/* Datum: 17.04.2023 */
+/* Status: Zeichenketten, Sortieren */
+/****************************************/
+
 import java.util.Scanner;
 
 public class sortLexi {
