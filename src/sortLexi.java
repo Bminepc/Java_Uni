@@ -28,7 +28,7 @@ public class sortLexi {
             strings[i] = sc.nextLine();
         }
 
-        //Selectionsort
+        //Selectionsort (Pseudocode übernommen aus der Aufgabenstellung)
         int cur_min;
         for (int i = 0; i < anzahl; i++) {
             cur_min = i;
@@ -42,6 +42,7 @@ public class sortLexi {
             strings[cur_min] = temp;
         }
 
+        // Ausgabe der sortierten Zahlen mithilfe eines For-Loops
         System.out.println("Hier Ihre Strings in sortierter Reihenfolge:");
         for (int i = 0; i < anzahl; i++) {
             System.out.println(strings[i]);

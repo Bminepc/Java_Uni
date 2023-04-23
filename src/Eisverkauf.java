@@ -1,3 +1,12 @@
+/********************************************/
+/* Matthis Steinhage, Benjamin Wendt        */
+/* Gruppe: Di10                             */
+/* Uebungsblatt: 1, Aufgabe: 2              */
+/* Thema: Wissenswertes über Zahlen, switch */
+/* Datum: 17.04.2023                        */
+/* Status: Zeichenketten, Sortieren         */
+/********************************************/
+
 import java.util.Scanner;
 
 public class Eisverkauf {
@@ -5,8 +14,8 @@ public class Eisverkauf {
         Scanner sc = new Scanner(System.in);
 
         //Initialisierung der Variablen für Kugelanzahl und Eissorte
-        int anzahl = 0;
-        String auswahl = "";
+        int anzahl;
+        String auswahl;
 
         //Eingabe der Kugelanzahl
         System.out.println("Wie viele Eiskugeln wünschen sie?");

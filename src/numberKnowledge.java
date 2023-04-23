@@ -4,21 +4,21 @@
 /* Uebungsblatt: 1, Aufgabe: 4              */
 /* Thema: Wissenswertes über Zahlen, switch */
 /* Datum: 17.04.2023                        */
-/* Status: lauffaehig - nicht Dokumentiert  */
+/* Status: lauffaehig                       */
 /********************************************/
 
 import java.util.Scanner;
 
 public class numberKnowledge {
-
+    // Deklarieren und Initialisieren des Scanners
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         do {
-
-
+            // Eingabe der Zahl um die es gehen soll.
             System.out.println("Über welche Zahl wollen Sie etwas wissen?");
             int Zahl = sc.nextInt();
+            // Durch"switch"en der Zahl und Ausgabe der jeweils geforderten Angaben
             switch (Zahl) {
                 case 1:
                     System.out.println("Die Zahl 1 ist Teiler jeder natürlichen Zahl.");
@@ -41,9 +41,11 @@ public class numberKnowledge {
                 case 7:
                     System.out.println("Die Zahl 7 gilt als Glückszahl.");
                     break;
+                // Gilt für alle anderen Zahlen
                 default:
                     System.out.println("Über die Zahl " + Zahl + " weiß ich nichts");
             }
+        // Abfrage zur wiederholung oder zum beenden
         System.out.println("Möchten Sie noch Infos über eine weitere Zahl erhalten, dann schreiben Sie <true>, ansonsten schreiben Sie <false>.");
         }while (sc.nextBoolean());
 

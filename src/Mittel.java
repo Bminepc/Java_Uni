@@ -1,12 +1,11 @@
-/****************************************/
-/* Matthis Steinhage, Benjamin Wendt */
-/* Gruppe: Di10 */
-/* Uebungsblatt: 1, Aufgabe: 1 */
+/**************************************************/
+/* Matthis Steinhage, Benjamin Wendt              */
+/* Gruppe: Di10                                   */
+/* Uebungsblatt: 1, Aufgabe: 1                    */
 /* Thema: Kommandozeilenparameter und Mittelwerte */
-/* Datum: 17.04.2023 */
-/* Status: lauffaehig - nicht Dokumentiert */
-
-/****************************************/
+/* Datum: 17.04.2023                              */
+/* Status: lauffaehig                             */
+/**************************************************/
 
 public class Mittel {
 
@@ -28,12 +27,12 @@ public class Mittel {
 
 
         for (int i = 0; i < args.length; i++) { // Für alle gemachten Eingaben
-            //TODO Overkill, weil im Moment angenommen werden kann, dass es nur Zahlen als Eingabe geben kann
-            try { // Versuche
-                numbers[i] = Double.parseDouble(args[i]); // Die Zahlen als Double zu parsen
-            } catch (NumberFormatException e) { // Wenn das nicht klappt (ein Parameter ist kein Double)
+            numbers[i] = Double.parseDouble(args[i]); // Parse die Zahlen als Double
+            if (numbers[i] < 0) { // Und prüfe, ob sie positiv sind. Falls nicht
                 System.out.println("Bitte geben die nur positive Doublewerte ein."); // Gebe eine Fehlermeldung aus
-                return; // und beende das Programm
+                return;
+                // Hinweis: Diese Überprüfung prüft nicht, ob die Eingaben Double sind, sondern nur, ob die Werte positiv sind.
+                // Hier könnte mit einem Try Catch um den Parse das ganze abgefangen werden.
             }
         }
 
