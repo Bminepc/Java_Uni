@@ -32,30 +32,31 @@ public class Mittel {
                 System.out.println("Bitte geben die nur positive Doublewerte ein."); // Gebe eine Fehlermeldung aus
                 return;
                 // Hinweis: Diese Überprüfung prüft nicht, ob die Eingaben Double sind, sondern nur, ob die Werte positiv sind.
-                // Hier könnte mit einem Try Catch um den Parse das ganze abgefangen werden.
+                // Hier könnte mit einem Try Catch um das Parsestatement das ganze abgefangen werden.
             }
         }
 
         // Aritmetisches Mittel
 
         // Alle Zahlen aufsummieren
-        for (int i = 0; i < numbers.length; i++) {
-            sum += numbers[i];
+        for (double number : numbers) {
+            sum += number;
         }
         // und durch die Anzahl teilen
         aritmetischesMittel = sum / numbers.length;
 
         //Geometrisches Mittel (Verfahren aus der Aufgabenstelluung übernommen)
         sum = 0.0;
-        for (int i = 0; i < numbers.length; i++) {
-            sum *= numbers[i];
+        for (double number : numbers) {
+            sum *= number;
         }
-        geo = Math.pow(sum, 1 / numbers.length);
+        //FIX 1.0 um keine Integerdivision zu haben
+        geo = Math.pow(sum, 1.0 / numbers.length);
 
         //Harmonisches Mittel (Verfahren aus der Aufgabenstellung übernommen)
         sum = 0.0;
-        for (int i = 0; i < numbers.length; i++) {
-            sum += 1 / numbers[i];
+        for (double number : numbers) {
+            sum += 1 / number;
         }
         har = numbers.length / sum;
 
