@@ -45,7 +45,7 @@ public class numberKnowledge {
                 default:
                     System.out.println("Über die Zahl " + Zahl + " weiß ich nichts");
             }
-        // Abfrage zur wiederholung oder zum beenden
+        // Abfrage zur wiederholung oder zum Beenden
         System.out.println("Möchten Sie noch Infos über eine weitere Zahl erhalten, dann schreiben Sie <true>, ansonsten schreiben Sie <false>.");
         }while (sc.nextBoolean());
 
