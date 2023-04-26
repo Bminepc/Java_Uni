@@ -1,4 +1,4 @@
-/****************************************/
+package Uebung1; /****************************************/
 /* Matthis Steinhage, Benjamin Wendt */
 /* Gruppe: Di10 */
 /* Uebungsblatt: 1, Aufgabe: 3 */
