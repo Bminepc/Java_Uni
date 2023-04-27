@@ -1,7 +1,6 @@
 package Uebung2.Aufgabe6;
 
 public class Stern extends Himmelskörper {
-    // TODO Add the Enums
     enum Leuchtkraftklasse {
         lk_0,
         lk_I,
@@ -25,5 +24,9 @@ public class Stern extends Himmelskörper {
 
     private Spektralklasse spektralklasse;
     private Leuchtkraftklasse leuchtkraftklasse;
+
+    public String toString(){
+        return super.toString() + ", Spektralklasse: " + spektralklasse + ", Leuchtkraftklasse: " + leuchtkraftklasse;
+    }
 
 }
