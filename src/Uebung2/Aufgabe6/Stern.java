@@ -25,7 +25,7 @@ public class Stern extends Himmelskörper {
     private Spektralklasse spektralklasse;
     private Leuchtkraftklasse leuchtkraftklasse;
 
-    public String toString(){
+    public String toString() {
         return super.toString() + ", Spektralklasse: " + spektralklasse + ", Leuchtkraftklasse: " + leuchtkraftklasse;
     }
 

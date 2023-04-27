@@ -6,7 +6,7 @@ public abstract class Planet extends Satellit {
     private Satellit[MONDE_MAX];
 
     // TODO For für alle Satteliten!
-    public String toString(){
+    public String toString() {
         return super.toString() + ", Anzahl Monde: " + nMonde + ", Satelliten: {" +
     }
 }

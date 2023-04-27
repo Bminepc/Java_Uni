@@ -6,7 +6,7 @@ public abstract class Himmelskörper {
     private double alter;
 
 
-    public String toString(){
+    public String toString() {
         return "Name: " + name + ", Durchmesser: " + durchmesser + ", Alter: " + alter;
     }
 }
