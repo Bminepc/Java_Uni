@@ -19,8 +19,8 @@ public abstract class Planet extends Satellit {
     @Override
     public String toString() {
         String ausgabeString = super.toString() + ", Anzahl Monde: " + nMonde + ", Satelliten: { ";
-        for (Satellit satellit : Monde) {
-            ausgabeString = ausgabeString + satellit.toString() + "; ";
+        for (int i = 0; i<nMonde;i++) {
+            ausgabeString = ausgabeString + Monde[i].toString() + "; ";
         }
         return ausgabeString;
     }
