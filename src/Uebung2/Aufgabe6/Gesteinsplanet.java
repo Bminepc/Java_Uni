@@ -8,6 +8,11 @@ public class Gesteinsplanet extends Planet {
         this.bevölkerung = bevölkerung;
     }
 
+    public Gesteinsplanet(String name, double durchmesser, double alter, Himmelskörper parent, int nMonde, int bevölkerung) {
+        super(name, durchmesser, alter, parent, nMonde);
+        this.bevölkerung = bevölkerung;
+    }
+
     @Override
     public String toString() {
         return super.toString() + ", Bevölkerung: " + bevölkerung;
