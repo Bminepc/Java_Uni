@@ -11,6 +11,11 @@ public abstract class Planet extends Satellit {
         Monde = monde;
     }
 
+    public Planet(String name, double durchmesser, double alter, Himmelskörper parent, int nMonde) {
+        super(name, durchmesser, alter, parent);
+        this.nMonde = nMonde;
+    }
+
     @Override
     public String toString() {
         String ausgabeString = super.toString() + ", Anzahl Monde: " + nMonde + ", Satelliten: { ";
@@ -18,5 +23,13 @@ public abstract class Planet extends Satellit {
             ausgabeString = ausgabeString + satellit.toString() + "; ";
         }
         return ausgabeString;
+    }
+
+    public void setMonde(Satellit[] monde) {
+        Monde = monde;
+    }
+
+    public void addMond(Satellit mond, int place){
+        Monde[place] = mond;
     }
 }
