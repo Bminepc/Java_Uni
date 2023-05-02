@@ -8,6 +8,7 @@ public class Asteroid extends Kleinkörper {
         this.eisenkern = eisenkern;
     }
 
+    @Override
     public String toString() {
         return super.toString() + ", Hat Eisenkern: " + eisenkern;
     }

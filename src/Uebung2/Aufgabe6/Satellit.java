@@ -8,6 +8,7 @@ public abstract class Satellit extends Himmelskörper {
         this.parent = parent;
     }
 
+    @Override
     public String toString() {
         return super.toString() + ", Parent: {" + parent.toString() + "}";
     }

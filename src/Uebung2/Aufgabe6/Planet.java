@@ -1,17 +1,22 @@
 package Uebung2.Aufgabe6;
 
 public abstract class Planet extends Satellit {
-    // TODO Monde bitte was?
+    final int MONDE_MAX = 3;
     private int nMonde;
-    private Satellit[MONDE_MAX];
+    private Satellit[] Monde = new Satellit[MONDE_MAX];
 
-    public Planet(String name, double durchmesser, double alter, Himmelskörper parent, int nMonde) {
+    public Planet(String name, double durchmesser, double alter, Himmelskörper parent, int nMonde, Satellit[] monde) {
         super(name, durchmesser, alter, parent);
         this.nMonde = nMonde;
+        Monde = monde;
     }
 
-    // TODO For für alle Satteliten!
+    @Override
     public String toString() {
-        return super.toString() + ", Anzahl Monde: " + nMonde + ", Satelliten: {" +
+        String ausgabeString = super.toString() + ", Anzahl Monde: " + nMonde + ", Satelliten: { ";
+        for (Satellit satellit : Monde) {
+            ausgabeString = ausgabeString + satellit.toString() + "; ";
+        }
+        return ausgabeString;
     }
 }

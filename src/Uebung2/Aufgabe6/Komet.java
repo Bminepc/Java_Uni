@@ -8,6 +8,7 @@ public class Komet extends Kleinkörper {
         this.periode = periode;
     }
 
+    @Override
     public String toString() {
         return super.toString() + ", Periode: " + periode;
     }

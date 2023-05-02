@@ -6,6 +6,7 @@ public abstract class Kleinkörper extends Satellit {
         super(name, durchmesser, alter, parent);
     }
 
+    @Override
     public String toString() {
         return super.toString();
     }
