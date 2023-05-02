@@ -1,7 +1,7 @@
 package Uebung2.Aufgabe6;
 
 public abstract class Planet extends Satellit {
-    final int MONDE_MAX = 3;
+    private final int MONDE_MAX = 3;
     private int nMonde;
     private Satellit[] Monde = new Satellit[MONDE_MAX];
 
