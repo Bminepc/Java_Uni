@@ -18,15 +18,11 @@ public abstract class Planet extends Satellit {
 
     @Override
     public String toString() {
-        String ausgabeString = super.toString() + ", Anzahl Monde: " + nMonde + ", Satelliten: { ";
+        String ausgabeString = super.toString() + ", Anzahl Monde: " + nMonde + ", Satelliten (Hash der Monde): { ";
         for (int i = 0; i<nMonde;i++) {
-            ausgabeString = ausgabeString + Monde[i].toString() + "; ";
+            ausgabeString = ausgabeString + Monde[i].hashCode() + "; ";
         }
-        return ausgabeString;
-    }
-
-    public void setMonde(Satellit[] monde) {
-        Monde = monde;
+        return ausgabeString + "}";
     }
 
     public void addMond(Satellit mond, int place){
