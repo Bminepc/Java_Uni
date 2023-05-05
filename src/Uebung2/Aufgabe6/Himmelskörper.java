@@ -13,12 +13,14 @@ public abstract class Himmelskörper {
     private double durchmesser;
     private double alter;
 
+
+    // Konstruktoren
     public Himmelskörper(String name, double durchmesser, double alter){
         this.alter = alter;
         this.name = name;
         this.durchmesser = durchmesser;
     }
-
+    // To String mit Aufruf der to String des Parents
     @Override
     public String toString() {
         return "Name: " + name + ", Durchmesser: " + durchmesser + ", Alter: " + alter;

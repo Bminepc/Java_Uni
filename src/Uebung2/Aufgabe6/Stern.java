@@ -9,6 +9,7 @@ package Uebung2.Aufgabe6;
 /**************************************************/
 
 public class Stern extends Himmelskörper {
+    // Festlegen der Enums
     enum Leuchtkraftklasse {
         lk_0,
         lk_I,
@@ -33,12 +34,14 @@ public class Stern extends Himmelskörper {
     private Spektralklasse spektralklasse;
     private Leuchtkraftklasse leuchtkraftklasse;
 
+    // Konstruktoren
     public Stern(String name, double durchmesser, double alter, Spektralklasse spektralklasse, Leuchtkraftklasse leuchtkraftklasse) {
         super(name, durchmesser, alter);
         this.spektralklasse = spektralklasse;
         this.leuchtkraftklasse = leuchtkraftklasse;
     }
 
+    // To String mit Aufruf der to String des Parents
     @Override
     public String toString() {
         return super.toString() + ", Spektralklasse: " + spektralklasse + ", Leuchtkraftklasse: " + leuchtkraftklasse;

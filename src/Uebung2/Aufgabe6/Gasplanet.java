@@ -12,7 +12,7 @@ public class Gasplanet extends Planet {
     private double dichte;
 
 
-    // Konstruktoren
+    // Konstruktoren (Einer mit Monden einer ohne Monde)
     public Gasplanet(String name, double durchmesser, double alter, Himmelskörper parent, int nMonde, Satellit[] monde, double dichte) {
         super(name, durchmesser, alter, parent, nMonde, monde);
         this.dichte = dichte;

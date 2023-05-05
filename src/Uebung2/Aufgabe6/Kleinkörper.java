@@ -10,10 +10,12 @@ package Uebung2.Aufgabe6;
 
 public abstract class Kleinkörper extends Satellit {
 
+    // Konstruktoren
     public Kleinkörper(String name, double durchmesser, double alter, Himmelskörper parent) {
         super(name, durchmesser, alter, parent);
     }
 
+    // To String mit Aufruf der to String des Parents
     @Override
     public String toString() {
         return super.toString();
