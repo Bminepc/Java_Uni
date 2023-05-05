@@ -1,5 +1,6 @@
-package Uebung1; /********************************************/
-/* Matthis Steinhage, Benjamin Wendt        */
+package Uebung1;
+/********************************************/
+/* Mathis Steinhage, Benjamin Wendt         */
 /* Gruppe: Di10                             */
 /* Uebungsblatt: 1, Aufgabe: 2              */
 /* Thema: Wissenswertes über Zahlen, switch */
