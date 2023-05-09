@@ -25,6 +25,10 @@ public class Anschrift {
     }
 
     @Override public String toString(){
-        return "Strasse: ";
+        if (zusatz == '0'){
+            return strasse + " " + hausnummer + "\n" + plz + " " + ort;
+        }else {
+            return strasse + " " + hausnummer + " " + zusatz + "\n" + plz + " " + ort;
+        }
     }
 }
