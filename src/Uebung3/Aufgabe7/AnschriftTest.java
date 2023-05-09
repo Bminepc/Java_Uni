@@ -1,7 +1,7 @@
 package Uebung3.Aufgabe7;
 
 import java.util.Scanner;
-
+// TODO Hier fehlen die Abfragen für "Eingabefehler"
 public class AnschriftTest {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
