@@ -1,6 +1,6 @@
 # Java Modul der BUW
 ## Intro
-Dies ist ein kleines Repository von Benjamin Wendt und Mathis Steinhge,
+Dies ist ein kleines Repository von Benjamin Wendt und Mathis Steinhage,
 welche an der Bergischen Universität Wuppertal studieren. <br>
 In diesem Repository sind die Lösungen unserer Übungsaufgaben zur synchronisation zwischen uns und auch anderen Leuten, die Hilfe brauchen.
 
