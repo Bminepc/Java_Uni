@@ -29,7 +29,7 @@ public class Anschrift {
         if (zusatz == '0'){
             return strasse + " " + hausnummer + "\n" + plz + " " + ort;
         }else {
-            return strasse + " " + hausnummer + " " + zusatz + "\n" + plz + " " + ort;
+            return strasse + " " + hausnummer + zusatz + "\n" + plz + " " + ort;
         }
     }
 }
