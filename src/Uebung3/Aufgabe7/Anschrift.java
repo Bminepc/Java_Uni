@@ -24,7 +24,8 @@ public class Anschrift {
         this.ort = o;
     }
 
-    @Override public String toString(){
+    @Override
+    public String toString(){
         if (zusatz == '0'){
             return strasse + " " + hausnummer + "\n" + plz + " " + ort;
         }else {
