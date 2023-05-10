@@ -11,18 +11,18 @@ public class TestStapel {
         IntStack.ablegen(19);
         //Testen von Methode entnehmen()
         try{
-            IntStack.entnehmen();
+            System.out.println(IntStack.entnehmen());
         }catch (Exception a) {
             System.out.println(a.getMessage());
         }
         try{
-            IntStack.entnehmen();
+            System.out.println(IntStack.entnehmen());
         }catch (Exception a){
             System.out.println(a.getMessage());
         }
         //Testen der Exception bei Aufruf von entnehmen() bei leerem Stack
         try{
-            IntStack.entnehmen();
+            System.out.println(IntStack.entnehmen());
         }catch (Exception a){
             System.out.println(a.getMessage());
         }
@@ -37,19 +37,20 @@ public class TestStapel {
         CharStack.ablegen('?');
         //Testen von Methode entnehmen()
         try{
-            CharStack.entnehmen();
+            System.out.println(CharStack.entnehmen());
         }catch (Exception a) {
             System.out.println(a.getMessage());
         }
         try{
-            CharStack.entnehmen();
+            System.out.println(CharStack.entnehmen());
         }catch (Exception a){
             System.out.println(a.getMessage());
         }
         //Testen der Exception bei Aufruf von Methode entnehmen() bei leeren Stack
         try{
-            CharStack.entnehmen();
-        }catch (Exception a){
+            System.out.println(CharStack.entnehmen());
+        }
+        catch (Exception a){
             System.out.println(a.getMessage());
         }
     }
