@@ -3,19 +3,27 @@ package Uebung3.Aufgabe8;
 public class Stapel<T> {
     private Element<T> erstesElement;
     public Stapel(){
-        erstesElement= new Element<T>();
+        erstesElement= null;
     }
-    public void ablegen(Element<T> e){
-        erstesElement.setNachfolger(new Element<>(erstesElement.getDaten(), erstesElement.getNachfolger()));
-        erstesElement.setDaten(e.getDaten());
-        erstesElement.setNachfolger(e.getNachfolger());
-    }
-
-    public T entnehmen(){
-        return erstesElement.getDaten();
+    public void ablegen(T e){
+        Element<T> temp = erstesElement;
+        erstesElement.setDaten(e);
+        erstesElement.setNachfolger(temp);
     }
 
+    public T entnehmen() {
+        T ausgabeDaten = erstesElement.getDaten();
+        if (!this.leer()) {
+            erstesElement.setDaten(erstesElement.getNachfolger().getDaten());
+            erstesElement.setNachfolger(erstesElement.getNachfolger().getNachfolger());
+            return ausgabeDaten;
+        }
+        else{
+            System.out.println("Der Stack ist leer");
+            return null;
+        }
+    }
     public boolean leer(){
-        return false;
+        return erstesElement == null;
     }
 }
