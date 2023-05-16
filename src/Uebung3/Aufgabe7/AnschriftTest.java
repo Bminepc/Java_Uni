@@ -1,6 +1,7 @@
 package Uebung3.Aufgabe7;
 
 import java.lang.annotation.AnnotationTypeMismatchException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 // TODO Hier fehlen die Abfragen für "Eingabefehler"
@@ -37,8 +38,9 @@ public class AnschriftTest {
             sc.skip("\n");
             System.out.println("Ort");
             o2 = sc.nextLine();
-        } catch (AnnotationTypeMismatchException e) {
-            System.out.println("Sie haben etwas eingegeben, was vom Typen her nicht passt. Bitte versuchen Sie es erneut");
+        } catch (InputMismatchException e) {
+            System.out.println("Sie haben etwas eingegeben, was vom Typen her nicht passt. Bitte versuchen Sie es erneut.");
+            return;
         }
 
         Anschrift anschrift2 = new Anschrift(s2, h2, z2, p2, o2);
