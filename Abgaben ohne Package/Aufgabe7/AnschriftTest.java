@@ -1,3 +1,4 @@
+package Uebung3.Aufgabe7;
 /**************************************************/
 /* Mathis Steinhage, Benjamin Wendt               */
 /* Gruppe: Di10                                   */
@@ -39,6 +40,7 @@ public class AnschriftTest {
             h2 = Integer.parseInt(sc.nextLine());
             System.out.println("Adresszusatz");
             z2 = sc.next().toCharArray()[0];
+            sc.skip("\n");
             // Hier muss ein Cast verwendet werde, weil sonst (aus unerfindlichen Gründen) eine Endlosschleife entsteht
             System.out.println("Postleitzahl");
             p2 = Integer.parseInt(sc.nextLine());
