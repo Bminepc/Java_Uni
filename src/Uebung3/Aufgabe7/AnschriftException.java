@@ -1,7 +1,7 @@
 package Uebung3.Aufgabe7;
 
 public class AnschriftException extends Exception{
-    enum FehlerTyp{
+    public enum FehlerTyp{
         ORTFEHLER,
         PLZFEHLER,
         ZUSATZFEHLER,
