@@ -24,10 +24,10 @@ public class AnschriftTest {
             System.out.println("Erste Anschrift Eingeben: ");
             System.out.println("Strasse");
             s1 = sc.nextLine();
-            System.out.println("Hausnummer");
-            h1 = sc.nextInt();
-            System.out.println("Postleitzahl");
             // Hier muss ein Cast verwendet werde, weil sonst (aus unerfindlichen Gründen) eine Endlosschleife entsteht
+            System.out.println("Hausnummer");
+            h1 = Integer.parseInt(sc.nextLine());
+            System.out.println("Postleitzahl");
             p1 = Integer.parseInt(sc.nextLine());
             System.out.println("Ort");
             o1 = sc.nextLine();
@@ -35,12 +35,13 @@ public class AnschriftTest {
             System.out.println("Zweite Anschrift Eingeben: ");
             System.out.println("Strasse");
             s2 = sc.nextLine();
+            // Hier muss ein Cast verwendet werde, weil sonst (aus unerfindlichen Gründen) eine Endlosschleife entsteht
             System.out.println("Hausnummer");
-            h2 = sc.nextInt();
+            h2 = Integer.parseInt(sc.nextLine());
             System.out.println("Adresszusatz");
             z2 = sc.next().toCharArray()[0];
-            System.out.println("Postleitzahl");
             // Hier muss ein Cast verwendet werde, weil sonst (aus unerfindlichen Gründen) eine Endlosschleife entsteht
+            System.out.println("Postleitzahl");
             p2 = Integer.parseInt(sc.nextLine());
             System.out.println("Ort");
             o2 = sc.nextLine();
