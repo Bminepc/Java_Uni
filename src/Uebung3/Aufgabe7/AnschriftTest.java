@@ -42,13 +42,16 @@ public class AnschriftTest {
             System.out.println("Sie haben etwas eingegeben, was vom Typen her nicht passt. Bitte versuchen Sie es erneut.");
             return;
         }
-
-        Anschrift anschrift2 = new Anschrift(s2, h2, z2, p2, o2);
-        Anschrift anschrift1 = new Anschrift(s1, h1, p1, o1);
-        System.out.println("Adresse 1: ");
-        System.out.println(anschrift1);
-        System.out.println("Adresse 2: ");
-        System.out.println(anschrift2);
+        try {
+            Anschrift anschrift2 = new Anschrift(s2, h2, z2, p2, o2);
+            Anschrift anschrift1 = new Anschrift(s1, h1, p1, o1);
+            System.out.println("Adresse 1: ");
+            System.out.println(anschrift1);
+            System.out.println("Adresse 2: ");
+            System.out.println(anschrift2);
+        }catch (AnschriftException e){
+            System.out.println(e);
+        }
         sc.close();
     }
 }
