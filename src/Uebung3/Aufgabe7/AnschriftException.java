@@ -1,6 +1,7 @@
 package Uebung3.Aufgabe7;
 
 public class AnschriftException extends Exception{
+    // Enum für die Fehlertypen
     public enum FehlerTyp{
         ORTFEHLER,
         PLZFEHLER,
@@ -10,18 +11,22 @@ public class AnschriftException extends Exception{
 
     private FehlerTyp error;
 
+    // Konstruktor ohne Parameter
     public AnschriftException(){
         error = FehlerTyp.UNDEFINED;
     }
 
+    // Konstruktor mit Parameter Fehlertyp
     public AnschriftException(FehlerTyp Error) {
         error = Error;
     }
 
-    public FehlerTyp getExceptioinCode(){
+    // Ungenutzt, aber üblicherweise sollte diese Methode enthalten sein.
+    public FehlerTyp getExceptionCode(){
         return error;
     }
 
+    // Einfache toString mit einem Switch-Case um zwischen den Fehlertypen zu unterscheiden und passende Ausgaben zu generieren.
     @Override
     public String toString(){
         switch (error){
