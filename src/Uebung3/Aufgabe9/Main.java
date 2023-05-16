@@ -10,14 +10,17 @@ public class Main {
         int a;
         System.out.print("Wie lang ist die Liste? ");
         a = sc.nextInt();
-        for (int i = 0; i < a; i++){
+        //Eingabe der Gäste
+        for (int i = 0; i < a; i++) {
             System.out.print("Alter: ");
             int alter = sc.nextInt();
             System.out.print("Name: ");
             String n = sc.next();
             gaesteliste.add(new Gast(n, alter));
         }
+        //Entfernen der unültigen Gäste aus gaesteliste
         gaesteliste.removeIf(x -> (x.getAlter() > 12));
+        //Ausgabe der gültigen Gäste
         gaesteliste.forEach(x -> {
             System.out.println(x);
         });
