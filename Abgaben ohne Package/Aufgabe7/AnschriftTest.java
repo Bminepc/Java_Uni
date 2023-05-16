@@ -1,4 +1,11 @@
-package Uebung3.Aufgabe7;
+/**************************************************/
+/* Mathis Steinhage, Benjamin Wendt               */
+/* Gruppe: Di10                                   */
+/* Uebungsblatt: 3, Aufgabe: 7                    */
+/* Thema: Anschrift | Ausnahmen                   */
+/* Datum: 16.05.2023                              */
+/* Status: lauffaehig                             */
+/**************************************************/
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
