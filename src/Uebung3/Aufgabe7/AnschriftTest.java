@@ -1,6 +1,5 @@
 package Uebung3.Aufgabe7;
 
-import java.lang.annotation.AnnotationTypeMismatchException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -8,9 +7,9 @@ public class AnschriftTest {
     public static void main(String[] args) {
         //Variablen deklarieren und initialisieren
         Scanner sc = new Scanner(System.in);
-        int h1 = 0, h2 = 0, p1 = 0, p2 = 0;
-        char z2 = ' ';
-        String o1 = "", o2 = "", s1 = "", s2 = "";
+        int h1, h2, p1, p2;
+        char z2;
+        String o1, o2, s1, s2;
 
         // Eingaben in einem Try Catch um inputmissmatch Fehler abzufangen!
         try {

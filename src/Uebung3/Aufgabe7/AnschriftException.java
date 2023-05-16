@@ -6,7 +6,7 @@ public class AnschriftException extends Exception{
         ORTFEHLER,
         PLZFEHLER,
         ZUSATZFEHLER,
-        UNDEFINED;
+        UNDEFINED
     }
 
     private FehlerTyp error;
@@ -29,20 +29,20 @@ public class AnschriftException extends Exception{
     // Einfache toString mit einem Switch-Case um zwischen den Fehlertypen zu unterscheiden und passende Ausgaben zu generieren.
     @Override
     public String toString(){
-        switch (error){
-            case ORTFEHLER : {
+        switch (error) {
+            case ORTFEHLER -> {
                 return "Beim einlesen den Ortes wurde ein Fehler gefunden.";
             }
-            case PLZFEHLER : {
+            case PLZFEHLER -> {
                 return "Bei einlesen der Postleitzahl wurde ein Fehler gefunden.";
             }
-            case UNDEFINED :{
+            case UNDEFINED -> {
                 return "Es ist ein nicht definierter Fehler aufgetreten.";
             }
-            case ZUSATZFEHLER : {
+            case ZUSATZFEHLER -> {
                 return "Bei einlesen des Adresszusatzes ist ein Fehler aufgetreten.";
             }
-            default: {
+            default -> {
                 return "Unexpected Error. Please contact your admin.";
             }
         }
