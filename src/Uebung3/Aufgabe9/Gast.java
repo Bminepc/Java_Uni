@@ -13,21 +13,10 @@ public class Gast {
         this.name = "Max";
         this.alter = 42;
     }
+    public int getAlter(){
+        return this.alter;
+    }
     @Override public String toString(){
         return this.name + " (" + this.alter + ")";
-    }
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        ArrayList<Gast> gaesteliste = new ArrayList<>();
-        int a;
-        System.out.print("Wie lang ist die Liste?");
-        a = sc.nextInt();
-        for (int i = 0; i < a; i++){
-            System.out.print("Alter: ");
-            int alter = sc.nextInt();
-            System.out.print("Name: ");
-            String n = sc.next();
-            gaesteliste.add(new Gast(n, alter));
-        }
     }
 }
