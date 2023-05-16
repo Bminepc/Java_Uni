@@ -1,4 +1,3 @@
-package Uebung3.Aufgabe7;
 /**************************************************/
 /* Mathis Steinhage, Benjamin Wendt               */
 /* Gruppe: Di10                                   */
