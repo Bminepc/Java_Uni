@@ -1,5 +1,12 @@
 package Uebung3.Aufgabe7;
-
+/**************************************************/
+/* Mathis Steinhage, Benjamin Wendt               */
+/* Gruppe: Di10                                   */
+/* Uebungsblatt: 3, Aufgabe: 7                    */
+/* Thema: Anschrift | Ausnahmen                   */
+/* Datum: 16.05.2023                              */
+/* Status: lauffaehig                             */
+/**************************************************/
 
 public class Anschrift {
     // Variablen deklarieren
@@ -10,17 +17,17 @@ public class Anschrift {
     private char zusatz;
 
     // Konstruktor ohne Adresszusatz
-    public Anschrift(String s, int h, int p, String o) throws AnschriftException{
+    public Anschrift(String s, int h, int p, String o) throws AnschriftException {
         this.strasse = s;
         this.hausnummer = h;
         // Prüfung, ob die PLZ eine Länge von 5 hat und ob diese größer als Null und somit positiv ist.
-        if(String.valueOf(p).length() != 5 || p < 0){
+        if (String.valueOf(p).length() != 5 || p < 0) {
             // Wenn nicht, wird hier unsere eigene Exception geworfen.
             throw new AnschriftException(AnschriftException.FehlerTyp.PLZFEHLER);
         }
         this.plz = p;
         // Überprüfung, ob der eigegebene Ortsname den gegebenen Kriterien entspricht
-        if (!o.matches("[a-zA-Z]+")){
+        if (!o.matches("[a-zA-Z]+")) {
             // Wenn nicht, wird hier unsere eigene Exception geworfen.
             throw new AnschriftException(AnschriftException.FehlerTyp.ORTFEHLER);
         }
@@ -32,19 +39,19 @@ public class Anschrift {
         this.strasse = s;
         this.hausnummer = h;
         // Überprüfung, ob der Adresszusatz ein Buchstabe ist.
-        if(!Character.isAlphabetic(z)){
+        if (!Character.isAlphabetic(z)) {
             // Wenn nicht, wird hier unsere eigene Exception geworfen.
             throw new AnschriftException(AnschriftException.FehlerTyp.ZUSATZFEHLER);
         }
         this.zusatz = z;
         // Prüfung, ob die PLZ eine Länge von 5 hat und ob diese größer als Null und somit positiv ist.
-        if(String.valueOf(p).length() != 5 || p < 0){
+        if (String.valueOf(p).length() != 5 || p < 0) {
             // Wenn nicht, wird hier unsere eigene Exception geworfen.
             throw new AnschriftException(AnschriftException.FehlerTyp.PLZFEHLER);
         }
         this.plz = p;
         // Überprüfung, ob der eigegebene Ortsname den gegebenen Kriterien entspricht
-        if (!o.matches("[a-zA-Z]+")){
+        if (!o.matches("[a-zA-Z]+")) {
             // Wenn nicht, wird hier unsere eigene Exception geworfen.
             throw new AnschriftException(AnschriftException.FehlerTyp.ORTFEHLER);
         }

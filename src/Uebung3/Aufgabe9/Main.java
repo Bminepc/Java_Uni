@@ -1,10 +1,18 @@
 package Uebung3.Aufgabe9;
+/**************************************************/
+/* Mathis Steinhage, Benjamin Wendt               */
+/* Gruppe: Di10                                   */
+/* Uebungsblatt: 3, Aufgabe: 9                    */
+/* Thema: Kindergeburtstag, Collections & Lambda  */
+/* Datum: 16.05.2023                              */
+/* Status: lauffaehig                             */
+/**************************************************/
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Gast> gaesteliste = new ArrayList<>();
         int a;

@@ -1,8 +1,16 @@
 package Uebung3.Aufgabe7;
+/**************************************************/
+/* Mathis Steinhage, Benjamin Wendt               */
+/* Gruppe: Di10                                   */
+/* Uebungsblatt: 3, Aufgabe: 7                    */
+/* Thema: Anschrift | Ausnahmen                   */
+/* Datum: 16.05.2023                              */
+/* Status: lauffaehig                             */
+/**************************************************/
 
-public class AnschriftException extends Exception{
+public class AnschriftException extends Exception {
     // Enum für die Fehlertypen
-    public enum FehlerTyp{
+    public enum FehlerTyp {
         ORTFEHLER,
         PLZFEHLER,
         ZUSATZFEHLER,
@@ -12,7 +20,7 @@ public class AnschriftException extends Exception{
     private FehlerTyp error;
 
     // Konstruktor ohne Parameter
-    public AnschriftException(){
+    public AnschriftException() {
         error = FehlerTyp.UNDEFINED;
     }
 
@@ -22,13 +30,13 @@ public class AnschriftException extends Exception{
     }
 
     // Ungenutzt, aber üblicherweise sollte diese Methode enthalten sein.
-    public FehlerTyp getExceptionCode(){
+    public FehlerTyp getExceptionCode() {
         return error;
     }
 
     // Einfache toString mit einem Switch-Case um zwischen den Fehlertypen zu unterscheiden und passende Ausgaben zu generieren.
     @Override
-    public String toString(){
+    public String toString() {
         switch (error) {
             case ORTFEHLER -> {
                 return "Beim einlesen den Ortes wurde ein Fehler gefunden.";
