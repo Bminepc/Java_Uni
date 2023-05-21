@@ -38,8 +38,7 @@ public class AnschriftTest {
             System.out.println("Hausnummer");
             h2 = Integer.parseInt(sc.nextLine());
             System.out.println("Adresszusatz");
-            z2 = sc.next().toCharArray()[0];
-            sc.skip("\n");
+            z2 = sc.nextLine().toCharArray()[0];
             // Hier muss ein Cast verwendet werde, weil sonst (aus unerfindlichen Gründen) eine Endlosschleife entsteht
             System.out.println("Postleitzahl");
             p2 = Integer.parseInt(sc.nextLine());
