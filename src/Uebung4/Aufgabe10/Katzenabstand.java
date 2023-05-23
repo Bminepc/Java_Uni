@@ -18,7 +18,7 @@ public class Katzenabstand extends JFrame {
     JLabel output = new JLabel("XX,XX%");
     JTextField input = new JTextField();
 
-    DecimalFormat df = new DecimalFormat("#.00");
+    DecimalFormat df = new DecimalFormat("#0.00");
 
     public Katzenabstand() {
         super("Katzenabstand");
