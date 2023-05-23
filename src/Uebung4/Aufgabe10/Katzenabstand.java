@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.Math.*;
+import java.text.DecimalFormat;
 
 public class Katzenabstand extends JFrame {
 
@@ -17,6 +18,8 @@ public class Katzenabstand extends JFrame {
     JLabel output = new JLabel("XX,XX%");
     JTextField input = new JTextField();
 
+    DecimalFormat df = new DecimalFormat("#.00");
+
     public Katzenabstand() {
         super("Katzenabstand");
         setResizable(false);
@@ -28,7 +31,8 @@ public class Katzenabstand extends JFrame {
                 double dInput = Double.parseDouble(input.getText());
                 System.out.println(dInput);
                 double dOutput = 100 * (2 * Math.PI * Math.pow(dInput, 5.0)) / ((2 * Math.PI * Math.pow(dInput, 5.0)) + 1);
-                output.setText(dOutput + "%");
+                System.out.println(dOutput);
+                output.setText(df.format(dOutput) + "%");
             }
         });
 
