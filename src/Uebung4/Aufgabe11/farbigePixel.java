@@ -5,12 +5,15 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Vector;
 
 public class farbigePixel extends JFrame {
     public farbigePixel(){
         super("Farbige Pixel");
         setResizable(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        Vector<Pix> Pixs = new Vector<>();
 
         JPanel malSpass = new JPanel();
         malSpass.addMouseListener(new MouseListener() {
@@ -20,12 +23,15 @@ public class farbigePixel extends JFrame {
                 switch (e.getButton()){
                     case 1:
                         temp = new Pix(Color.RED,e.getX(),e.getY());
+                        Pixs.add(temp);
                         break;
                     case 2:
                         temp = new Pix(Color.GREEN,e.getX(),e.getY());
+                        Pixs.add(temp);
                         break;
                     case 3:
                         temp = new Pix(Color.BLUE,e.getX(),e.getY());
+                        Pixs.add(temp);
                         break;
                     default:
                         System.out.println("Was ist denn hier los?");
