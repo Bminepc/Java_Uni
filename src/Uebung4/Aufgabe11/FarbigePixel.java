@@ -32,10 +32,6 @@ public class FarbigePixel extends JFrame {
                         temp = null;
                 }
                 malSpass.addPix(temp);
-                System.out.println(e.getX());
-                System.out.println(temp.getX());
-                System.out.println(e.getY());
-                System.out.println(temp.getY());
                 repaint();
             }
 
