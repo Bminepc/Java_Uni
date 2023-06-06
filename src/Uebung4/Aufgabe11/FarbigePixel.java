@@ -2,40 +2,41 @@ package Uebung4.Aufgabe11;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Vector;
 
-public class farbigePixel extends JFrame {
-    public farbigePixel(){
+public class FarbigePixel extends JFrame {
+    public FarbigePixel(){
         super("Farbige Pixel");
         setResizable(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        Vector<Pix> Pixs = new Vector<>();
-
-        JPanel malSpass = new JPanel();
+        PaintPanel malSpass = new PaintPanel();
         malSpass.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 Pix temp;
                 switch (e.getButton()){
                     case 1:
-                        temp = new Pix(Color.RED,e.getX(),e.getY());
-                        Pixs.add(temp);
+                        temp = new Pix(Color.RED,(e.getX() - (e.getX()%10))/10,(e.getY() - (e.getY()%10))/10);
                         break;
                     case 2:
-                        temp = new Pix(Color.GREEN,e.getX(),e.getY());
-                        Pixs.add(temp);
+                        temp = new Pix(Color.GREEN,(e.getX() - (e.getX()%10))/10,(e.getY() - (e.getY()%10))/10);
                         break;
                     case 3:
-                        temp = new Pix(Color.BLUE,e.getX(),e.getY());
-                        Pixs.add(temp);
+                        temp = new Pix(Color.BLUE,(e.getX() - (e.getX()%10))/10,(e.getY() - (e.getY()%10))/10);
                         break;
                     default:
                         System.out.println("Was ist denn hier los?");
+                        temp = null;
                 }
+                malSpass.addPix(temp);
+                System.out.println(e.getX());
+                System.out.println(temp.getX());
+                System.out.println(e.getY());
+                System.out.println(temp.getY());
+                repaint();
             }
 
             @Override
@@ -65,6 +66,6 @@ public class farbigePixel extends JFrame {
         setVisible(true);
     }
     public static void main(String[] args){
-        SwingUtilities.invokeLater(farbigePixel::new);
+        SwingUtilities.invokeLater(FarbigePixel::new);
     }
 }
