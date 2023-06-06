@@ -1,14 +1,14 @@
 package Uebung4.Aufgabe11;
 
-public class Color {
+public class Pix {
     private java.awt.Color Farbe;
     private int x;
     private int y;
 
-    public Color(java.awt.Color f, int a, int b){
+    public Pix(java.awt.Color f, int X, int Y){
         this.Farbe = f;
-        this.x = a;
-        this.y = b;
+        this.x = X;
+        this.y = Y;
     }
 
     public java.awt.Color getFarbe(){return this.Farbe;}
