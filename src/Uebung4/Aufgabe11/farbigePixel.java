@@ -12,6 +12,7 @@ public class farbigePixel extends JFrame {
         JPanel malSpass = new JPanel();
         setLayout(new BorderLayout());
         add(malSpass, BorderLayout.CENTER);
+
         pack();
         setVisible(true);
     }
