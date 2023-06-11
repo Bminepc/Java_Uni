@@ -6,28 +6,6 @@ import java.util.ArrayList;
 
 public class Speiseplan extends JFrame{
 
-    private String[] datasets;
-    public Speiseplan(){
-        setResizable(true);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        makeTable();
-    }
-
-    public void setDatasets(String[] Datasets){
-        datasets = Datasets;
-    }
-
-    public void makeTable(){
-        String[] c = datasets[0].split(";");
-        String[][] dataset = new String[datasets.length][c.length];
-        for (int i = 0; i<dataset.length;i++){
-                dataset[i] = datasets[i].split(";");
-
-        }
-        System.out.println(c);
-        JTable table = new JTable(dataset,dataset[0]);
-        this.add(table);
-    }
 
     public static void main(String[] args){
         ArrayList<String> rawData = new ArrayList<String>();
@@ -39,7 +17,6 @@ public class Speiseplan extends JFrame{
             while (zeile != null)
             {
                 rawData.add(zeile);
-                System.out.println(zeile);
                 zeile = br.readLine();
             }
         } catch (FileNotFoundException e) {
@@ -47,14 +24,22 @@ public class Speiseplan extends JFrame{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String[] datasetss = new String[rawData.size()];
-        for( int i = 0; i<rawData.size();i++){
-            datasetss[i] = rawData.get(i);
-        }
-        Speiseplan s = new Speiseplan();
-        s.setDatasets(datasetss);
-        System.out.println("Fuck");
+        Speiseplan f = new Speiseplan();
 
-        //SwingUtilities.invokeLater((Runnable) s);
+        String[] datasets = new String[rawData.size()];
+        for( int i = 0; i<rawData.size();i++){
+            datasets[i] = rawData.get(i);
+        }
+        String[] c = datasets[0].split(";");
+        String[][] dataset = new String[datasets.length][c.length];
+        for (int i = 0; i<dataset.length;i++){
+            dataset[i] = datasets[i].split(";");
+        }
+
+        JTable table = new JTable(dataset,dataset[0]);
+        f.add(table);
+        f.pack();
+        f.setSize(800,200);
+        f.setVisible(true);
     }
 }
