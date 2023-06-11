@@ -1,20 +1,36 @@
 package Uebung4.Aufgabe12;
 
-import Uebung4.Aufgabe11.FarbigePixel;
-
 import javax.swing.*;
 import java.io.*;
+import java.util.ArrayList;
 
 public class Speiseplan extends JFrame{
 
-    private static String[] rawData;
+    private String[] datasets;
     public Speiseplan(){
         setResizable(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        makeTable();
+    }
+
+    public void setDatasets(String[] Datasets){
+        datasets = Datasets;
+    }
+
+    public void makeTable(){
+        String[] c = datasets[0].split(";");
+        String[][] dataset = new String[datasets.length][c.length];
+        for (int i = 0; i<dataset.length;i++){
+                dataset[i] = datasets[i].split(";");
+
+        }
+        System.out.println(c);
+        JTable table = new JTable(dataset,dataset[0]);
+        this.add(table);
     }
 
     public static void main(String[] args){
-        SwingUtilities.invokeLater(Speiseplan::new);
+        ArrayList<String> rawData = new ArrayList<String>();
         try (FileReader fr = new FileReader(new File(args[0]));
              BufferedReader br = new BufferedReader(fr))
         {
@@ -22,7 +38,7 @@ public class Speiseplan extends JFrame{
             String zeile = br.readLine();
             while (zeile != null)
             {
-                System.out.println(zeile);
+                rawData.add(zeile);
                 zeile = br.readLine();
             }
         } catch (FileNotFoundException e) {
@@ -30,5 +46,12 @@ public class Speiseplan extends JFrame{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        String[] datasetss = new String[rawData.size()];
+        for( int i = 0; i<rawData.size();i++){
+            datasetss[i] = rawData.get(i);
+        }
+        Speiseplan s = new Speiseplan();
+        s.setDatasets(datasetss);
+        SwingUtilities.invokeLater((Runnable) s);
     }
 }
