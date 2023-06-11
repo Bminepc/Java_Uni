@@ -39,6 +39,7 @@ public class Speiseplan extends JFrame{
             while (zeile != null)
             {
                 rawData.add(zeile);
+                System.out.println(zeile);
                 zeile = br.readLine();
             }
         } catch (FileNotFoundException e) {
@@ -52,6 +53,8 @@ public class Speiseplan extends JFrame{
         }
         Speiseplan s = new Speiseplan();
         s.setDatasets(datasetss);
-        SwingUtilities.invokeLater((Runnable) s);
+        System.out.println("Fuck");
+
+        //SwingUtilities.invokeLater((Runnable) s);
     }
 }
