@@ -6,6 +6,12 @@ import java.util.ArrayList;
 
 public class Speiseplan extends JFrame{
 
+    public Speiseplan(){
+        // Standardeinstellungen für ein Fenster
+        super("Speiseplan");
+        setResizable(false);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
 
     public static void main(String[] args){
         // Erstellen einer Arraylist um für eine variable Größe der Eingangsdaten vorbereitet zu sein
