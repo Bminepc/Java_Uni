@@ -17,6 +17,7 @@ public class FarbigePixel extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 Pix temp;
+                //Switch-Case zum Unterscheiden der verschiedenen Maustasten
                 switch (e.getButton()){
                     case 1:
                         temp = new Pix(Color.RED,(e.getX() - (e.getX()%10))/10,(e.getY() - (e.getY()%10))/10);
@@ -32,6 +33,7 @@ public class FarbigePixel extends JFrame {
                         temp = null;
                 }
                 malSpass.addPix(temp);
+                //Entfernt alle bisher gemalten Pixel und malt alle Pixel in Vektor Pixs
                 repaint();
             }
 
