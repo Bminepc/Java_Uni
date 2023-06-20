@@ -1,6 +1,5 @@
 package Uebung5.Aufgabe15;
 
-import javax.swing.*;
 import java.util.Random;
 public class Threader extends Thread{
     Balken jpb;
