@@ -5,7 +5,6 @@ import java.awt.*;
 import java.lang.annotation.AnnotationTypeMismatchException;
 
 import static javax.swing.SwingConstants.HORIZONTAL;
-import static javax.swing.SwingConstants.VERTICAL;
 
 public class Fortschrittsbalken extends JFrame {
     int threadAnzahl;
