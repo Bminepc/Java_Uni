@@ -11,3 +11,4 @@ public class Rechner {
         return result;
     }
 }
+
