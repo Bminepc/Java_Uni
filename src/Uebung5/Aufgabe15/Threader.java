@@ -20,7 +20,7 @@ public class Threader extends Thread{
                 throw new RuntimeException(e);
             }
             if(w.hasWon()) return;
-            jpb.procced();
+            jpb.proceed();
         }
         w.setWon();
     }

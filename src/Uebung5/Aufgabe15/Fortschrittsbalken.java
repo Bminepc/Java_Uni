@@ -8,20 +8,20 @@ import static javax.swing.SwingConstants.HORIZONTAL;
 import static javax.swing.SwingConstants.VERTICAL;
 
 public class Fortschrittsbalken extends JFrame {
-    int n;
+    int threadAnzahl;
     Thread[] t;
     WinnerAnnouncer w = new WinnerAnnouncer();
     public Fortschrittsbalken(){
         super("Rennen");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setRootPaneCheckingEnabled(false);
-        this.setLayout( new GridLayout(n, 1));
+        this.setLayout( new GridLayout(threadAnzahl, 1));
     }
 
     public void runFortschrittsbalken(int n){
-        this.n = n;
+        this.threadAnzahl = n;
         t = new Thread[n];
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < threadAnzahl; i++){
             Balken temp = new Balken(HORIZONTAL, 0, 100);
             temp.setString("Rennthread " + i);
             temp.setStringPainted(true);
