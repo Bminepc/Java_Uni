@@ -9,36 +9,38 @@ import static javax.swing.SwingConstants.HORIZONTAL;
 public class Fortschrittsbalken extends JFrame {
     int threadAnzahl;
     Thread[] t;
-    WinnerAnnouncer w = new WinnerAnnouncer();
-    public Fortschrittsbalken(){
+    WinnerAnnouncer w = new WinnerAnnouncer(); // Verwalterklasse zur Bestimmung des "Gewinners"
+
+    public Fortschrittsbalken() {
+        // Standarteinstellungen
         super("Rennen");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setRootPaneCheckingEnabled(false);
-        this.setLayout( new GridLayout(threadAnzahl, 1));
+        this.setLayout(new GridLayout(threadAnzahl, 1)); // Eine Spalte mit so vielen Zeilen wir es Threads gibt
     }
 
-    public void runFortschrittsbalken(int n){
+    public void runFortschrittsbalken(int n) {
         this.threadAnzahl = n;
-        t = new Thread[n];
-        for (int i = 0; i < threadAnzahl; i++){
-            Balken temp = new Balken(HORIZONTAL, 0, 100);
-            temp.setString("Rennthread " + i);
-            temp.setStringPainted(true);
-            t[i] = new Threader(temp, w);
-            add(temp);
+        t = new Thread[n]; // Array zur verwaltung der Threads
+        for (int i = 0; i < threadAnzahl; i++) {
+            Balken temp = new Balken(HORIZONTAL, 0, 100); // Erstellen des eigenen Balken
+            temp.setString("Rennthread " + i); // Setzen des Namens
+            temp.setStringPainted(true); // Anzeigen des Namens
+            t[i] = new Threader(temp, w); // Erstellen des Treads und übergeben des Balken
+            add(temp); // Hinzufügen des Balken zum JFrame
         }
-        pack();
-        setVisible(true);
-        for (int i = 0; i < n; i++) {
+        pack(); // Aufräumen
+        setVisible(true); // Sichtbar machen
+        for (int i = 0; i < n; i++) { // Starten der Threads
             t[i].start();
         }
     }
 
-    public static void main(String[] args){
-        Fortschrittsbalken ftemp = new Fortschrittsbalken();
+    public static void main(String[] args) {
+        Fortschrittsbalken ftemp = new Fortschrittsbalken(); // Erstellen einer neuen Balkenverwaltung
         try {
-            ftemp.runFortschrittsbalken(Integer.parseInt(args[0]));
-        }catch (AnnotationTypeMismatchException e){
+            ftemp.runFortschrittsbalken(Integer.parseInt(args[0])); // Ausführen der Balkenverwaltung
+        } catch (AnnotationTypeMismatchException e) { // Nötig wegen des ParseInt
 
         }
     }
