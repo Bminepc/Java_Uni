@@ -13,7 +13,15 @@ public class KugelClient {
             InputStream clientIn = kugelSocket.getInputStream();
             InputStreamReader isr = new InputStreamReader(clientIn);
             BufferedReader reader = new BufferedReader(isr);
-            System.out.println(reader.readLine());
+            Boolean hasNextLine = true;
+            while (hasNextLine){
+                String r = reader.readLine();
+                if(r!= null){
+                    System.out.println(r);
+                }else {
+                    hasNextLine = false;
+                }
+            }
         }catch (IOException ioe) {
             System.out.println(ioe.getMessage());
         }
