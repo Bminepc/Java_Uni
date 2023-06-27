@@ -1,4 +1,4 @@
-package Uebung1; /**************************************************/
+package Uebung1.Aufgabe1; /**************************************************/
 /* Matthis Steinhage, Benjamin Wendt              */
 /* Gruppe: Di10                                   */
 /* Uebungsblatt: 1, Aufgabe: 1                    */
@@ -36,7 +36,7 @@ public class Mittel {
             }
         }
 
-        // Aritmetisches Uebung1.Mittel
+        // Aritmetisches Uebung1.Aufgabe1.Mittel
 
         // Alle Zahlen aufsummieren
         for (double number : numbers) {
@@ -45,7 +45,7 @@ public class Mittel {
         // und durch die Anzahl teilen
         aritmetischesMittel = sum / numbers.length;
 
-        //Geometrisches Uebung1.Mittel (Verfahren aus der Aufgabenstelluung übernommen)
+        //Geometrisches Uebung1.Aufgabe1.Mittel (Verfahren aus der Aufgabenstelluung übernommen)
         sum = 0.0;
         for (double number : numbers) {
             sum *= number;
@@ -53,7 +53,7 @@ public class Mittel {
         //FIX 1.0 um keine Integerdivision zu haben
         geo = Math.pow(sum, 1.0 / numbers.length);
 
-        //Harmonisches Uebung1.Mittel (Verfahren aus der Aufgabenstellung übernommen)
+        //Harmonisches Uebung1.Aufgabe1.Mittel (Verfahren aus der Aufgabenstellung übernommen)
         sum = 0.0;
         for (double number : numbers) {
             sum += 1 / number;
@@ -61,11 +61,11 @@ public class Mittel {
         har = numbers.length / sum;
 
         //Ausgaben
-        System.out.println("Aritmetisches Uebung1.Mittel:");
+        System.out.println("Aritmetisches Uebung1.Aufgabe1.Mittel:");
         System.out.println(aritmetischesMittel);
-        System.out.println("Geometrisches Uebung1.Mittel");
+        System.out.println("Geometrisches Uebung1.Aufgabe1.Mittel");
         System.out.println(geo);
-        System.out.println("Harmonisches Uebung1.Mittel");
+        System.out.println("Harmonisches Uebung1.Aufgabe1.Mittel");
         System.out.println(har);
     }
 }
