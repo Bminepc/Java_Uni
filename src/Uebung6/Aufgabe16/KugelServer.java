@@ -34,7 +34,7 @@ public class KugelServer {
                 writer.write(x + "\n");
                 writer.write(y + "\n");
                 for(int i = 0; i < kreise.size();i++){
-                    writer.write("Has Next\n"); // Status
+                    writer.write("Has Next" + System.lineSeparator()); // Status
                     writer.write(kreise.get(i).getX() + "\n");
                     writer.write(kreise.get(i).getY() + "\n");
                     writer.write(kreise.get(i).getColor().getRed() + "\n");

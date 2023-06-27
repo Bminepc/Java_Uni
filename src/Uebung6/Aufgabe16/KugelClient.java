@@ -16,7 +16,7 @@ public class KugelClient {
         JFrame frame = new JFrame("Kreis");
         ClientPanel panel = new ClientPanel();
         try {
-            Socket kugelSocket = new Socket("localhost", 52390);
+            Socket kugelSocket = new Socket("81.169.152.161", 52390);
             InputStream clientIn = kugelSocket.getInputStream();
             InputStreamReader isr = new InputStreamReader(clientIn);
             BufferedReader reader = new BufferedReader(isr);
