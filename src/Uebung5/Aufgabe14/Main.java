@@ -7,7 +7,7 @@ public class Main {
         Kind[] kinder = new Kind[10]; // Anlegen eines Arrays zur Verwaltung der Threads
         for (int i = 0; i < 10; i++) {
             kinder[i] = new Kind(bglas); // Initialisierung jedes Threads
-            kinder[i].run(); // Starten jedes Threads
+            kinder[i].start(); // Starten jedes Threads
         }
         for (int i = 0; i < 10; i++) {
             try {

@@ -1,4 +1,11 @@
-package Uebung5.Aufgabe15;
+/*****************************************/
+/* Mathis Steinhage, Benjamin Wendt      */
+/* Gruppe: Di10                          */
+/* Uebungsblatt: 5, Aufgabe: 15          */
+/* Thema: Wettlauf der Fortschritsbalken */
+/* Datum: 23.06.2023                     */
+/* Status: lauffaehig                    */
+/*****************************************/
 
 import javax.swing.*;
 
