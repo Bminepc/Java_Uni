@@ -7,7 +7,7 @@ public class UDPSender {
     public static void createMessage(byte[] list, String i){
         list[0] = Byte.parseByte(i);
         for (int j = 1; j < 65001; j++) {
-            list[j] = Byte.parseByte(" ");
+            list[j] = (byte) 32;
         }
     }
     public static void sendPackage(String host, int port, int i) throws SocketException {
