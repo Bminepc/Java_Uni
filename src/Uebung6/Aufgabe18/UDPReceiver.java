@@ -11,12 +11,16 @@ public class UDPReceiver {
             while (true) {
                 DatagramPacket pack = new DatagramPacket(new byte[65001], 65001);
                 ds.receive(pack);
-                byte[] temp = new byte[4];
+                //erste Zeichen der Nachricht werden in byte-Array überführt
+                byte[] messageOhneNummer = new byte[4];
                 for (int i = 1; i < 5; i++) {
-                    temp[i-1] = pack.getData()[i];
+                    messageOhneNummer[i-1] = pack.getData()[i];
                 }
-                String message = new String(temp);
+                //byte-Array wird in String umgewandelt
+                String message = new String(messageOhneNummer);
+                //Packnummer wird in String umgewandelt und angehängt
                 message = String.valueOf(pack.getData()[0]) + message;
+                //Ausgabe von empfangenem Pack
                 System.out.println("Pack " + receivedPacks + ": " + message);
                 receivedPacks++;
             }
