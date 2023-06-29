@@ -12,10 +12,11 @@ public class UDPReceiver {
                 DatagramPacket pack = new DatagramPacket(new byte[65001], 65001);
                 ds.receive(pack);
                 byte[] temp = new byte[4];
-                for (int i = 0; i < 3; i++) {
-                    temp[i] = pack.getData()[i];
+                for (int i = 1; i < 5; i++) {
+                    temp[i-1] = pack.getData()[i];
                 }
                 String message = new String(temp);
+                message = String.valueOf(pack.getData()[0]) + message;
                 System.out.println("Pack " + receivedPacks + ": " + message);
                 receivedPacks++;
             }
