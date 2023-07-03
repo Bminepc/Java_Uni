@@ -17,41 +17,22 @@ public class KugelServer {
     private static int port = 52390;
 
     public static void main(String[] args) throws IOException {
+        // TODO Wo muss hier ein Lock für unsere Variable hin?
         ArrayList<Kreissaver> kreise = new ArrayList<>();
-        Random r = new Random();
-        while (true) {
+        ArrayList<ServerSocketManager> sockets = new ArrayList<>();
             try {
                 ServerSocket p = new ServerSocket(port);
-                Socket c = p.accept();
-                OutputStream serverOut = c.getOutputStream();
-                OutputStreamWriter osw = new OutputStreamWriter(serverOut);
-                BufferedWriter writer = new BufferedWriter(osw);
-                // Datenerzeugung
-                int x = 600;
-                int y = 600;
-                double kx = r.nextDouble(50,550);
-                double ky = r.nextDouble(50,550);
-                Color color = Color.getHSBColor(r.nextFloat(100), 0.9F, 0.8F);
-                kreise.add(new Kreissaver(kx,ky,color));
-                writer.write(x + "\n");
-                writer.write(y + "\n");
-                for(int i = 0; i < kreise.size();i++){
-                    writer.write("Has Next" + System.lineSeparator()); // Status
-                    writer.write(kreise.get(i).getX() + "\n");
-                    writer.write(kreise.get(i).getY() + "\n");
-                    writer.write(kreise.get(i).getColor().getRed() + "\n");
-                    writer.write(kreise.get(i).getColor().getGreen() + "\n");
-                    writer.write(kreise.get(i).getColor().getBlue() + "\n");
+                while (true) {
+                    Socket c = p.accept();
+                    sockets.add(new ServerSocketManager(c, kreise));
+                    sockets.get(sockets.size() - 1).start();
+                    for (int i = 0; i < sockets.size() - 1; i++) {
+                        sockets.get(i).sendCircles();
+                    }
                 }
-                System.out.println("Have written to Client");
-                writer.newLine();
-                writer.flush();
-                c.close();
-                // Bad practice!
-                p.close();
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
-        }
+
     }
 }

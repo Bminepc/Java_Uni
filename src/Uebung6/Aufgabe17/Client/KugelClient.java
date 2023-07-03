@@ -40,4 +40,5 @@ public class KugelClient {
         frame.setSize(x,y);
         frame.setVisible(true);
     }
+
 }
