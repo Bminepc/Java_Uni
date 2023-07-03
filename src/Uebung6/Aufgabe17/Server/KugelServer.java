@@ -20,11 +20,12 @@ public class KugelServer {
         // TODO Wo muss hier ein Lock für unsere Variable hin?
         ArrayList<Kreissaver> kreise = new ArrayList<>();
         ArrayList<ServerSocketManager> sockets = new ArrayList<>();
+        ConnectionWasLost cwl = new ConnectionWasLost();
             try {
                 ServerSocket p = new ServerSocket(port);
                 while (true) {
                     Socket c = p.accept();
-                    sockets.add(new ServerSocketManager(c, kreise));
+                    sockets.add(new ServerSocketManager(c, kreise, cwl));
                     sockets.get(sockets.size() - 1).start();
                     for (int i = 0; i < sockets.size() - 1; i++) {
                         sockets.get(i).sendCircles();

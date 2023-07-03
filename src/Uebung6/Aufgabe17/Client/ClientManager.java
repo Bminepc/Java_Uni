@@ -11,11 +11,9 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class ClientManager extends Thread{
-    private ArrayList<Kreissaver> currentKreise;
     private BufferedReader reader;
     private ClientPanel panel;
-    public  ClientManager(ArrayList<Kreissaver> kreise, BufferedReader reader, ClientPanel panel){
-        this.currentKreise = kreise;
+    public  ClientManager(BufferedReader reader, ClientPanel panel){
         this.reader = reader;
         this.panel = panel;
     }

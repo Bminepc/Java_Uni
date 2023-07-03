@@ -28,6 +28,8 @@ public class KugelClient {
                 c = new Color(Integer.parseInt(reader.readLine()), Integer.parseInt(reader.readLine()), Integer.parseInt(reader.readLine()));
                 panel.addKreis(kx,ky,c);
             }
+            ClientManager cm = new ClientManager(reader, panel);
+            cm.start();
 
         }catch (IOException ioe) {
             System.out.println(ioe.getMessage());
