@@ -50,7 +50,7 @@ public class ServerSocketManager extends Thread{
                 writer.write(kreise.get(i).getColor().getGreen() + "\n");
                 writer.write(kreise.get(i).getColor().getBlue() + "\n");
             }
-            System.out.println("Have written to Client " + selfId);
+            System.out.println("Have written to Client");
             writer.newLine();
             writer.flush();
         } catch (IOException e) {
@@ -75,7 +75,7 @@ public class ServerSocketManager extends Thread{
                     writer.write(kreise.get(i).getColor().getGreen() + "\n");
                     writer.write(kreise.get(i).getColor().getBlue() + "\n");
                 }
-                System.out.println("Have written new to Client " + selfId);
+                System.out.println("Have written to Client");
                 writer.newLine();
                 writer.flush();
             } catch (IOException e) {
@@ -87,20 +87,18 @@ public class ServerSocketManager extends Thread{
     @Override
     public void run() {
         super.run();
-        System.out.println("Ich habe einen Socket bekommen " + selfId);
+        System.out.println("Ich habe einen Socket bekommen");
         sendFirstCircles();
         try{
-            int temp = cwl.getConnectionWasLost();
+            int temp = 0;
             while (true){
                 if(temp < cwl.getConnectionWasLost()){
-                    System.out.println("fadfdfdfsddsfsdf " + selfId);
                     temp = cwl.getConnectionWasLost();
                     sendCircles();
                 }
                 socket.getInputStream().read();
             }
         } catch (IOException e) {
-            System.out.println("Someone Disconnected " + selfId);
             kreise.remove(selfId);
             isConnected = false;
             cwl.ConnectionLost();

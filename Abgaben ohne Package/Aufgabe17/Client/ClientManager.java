@@ -24,8 +24,6 @@ public class ClientManager extends Thread{
         while(true){
             try {
                 if (reader.readLine().equals("New Data")){
-                    System.out.println("New Data for me");
-                    panel.deleteKreise();
                     while (reader.readLine().equals("Has Next")) {
                         double kx = Double.parseDouble(reader.readLine());
                         double ky = Double.parseDouble(reader.readLine());

@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class ConnectionWasLost {
 
-    private int connectionWasLost = 0;
+    private int ConnectionWasLost = 0;
     Lock l;
 
     public ConnectionWasLost(){
@@ -13,13 +13,12 @@ public class ConnectionWasLost {
     }
 
     public synchronized int getConnectionWasLost(){
-        return connectionWasLost;
+        return ConnectionWasLost;
     }
 
     public synchronized void ConnectionLost(){
         l.lock();
-        connectionWasLost++;
+        ConnectionWasLost++;
         l.unlock();
-        System.out.println(connectionWasLost);
     }
 }
