@@ -15,13 +15,13 @@ public class KugelServer {
     private static int port = 52390;
 
     public static void main(String[] args) throws IOException {
-        //Array zum Speichern von gesendeten Kreisen
+        // Array zum Speichern von gesendeten Kreisen
         ArrayList<KreisSaver> kreise = new ArrayList<>();
         Random r = new Random();
         while (true) {
             try {
                 ServerSocket p = new ServerSocket(port);
-                //Neuer Client akzeptiert
+                // Neuer Client akzeptiert und eine Möglichkeit zum Schreiben wird erstellt
                 Socket c = p.accept();
                 OutputStream serverOut = c.getOutputStream();
                 OutputStreamWriter osw = new OutputStreamWriter(serverOut);
@@ -31,12 +31,12 @@ public class KugelServer {
                 int y = 600;
                 double kx = r.nextDouble(50,550);
                 double ky = r.nextDouble(50,550);
-                //Zufallsfarbe wird erstellt
+                // Zufallsfarbe wird erstellt
                 Color color = Color.getHSBColor(r.nextFloat(100), 0.9F, 0.8F);
                 kreise.add(new KreisSaver(kx,ky,color));
                 writer.write(x + "\n");
                 writer.write(y + "\n");
-                //Schreibt den Inhalt von kreise in OutputStream
+                // Schreibt den Inhalt von kreise in OutputStream
                 for(int i = 0; i < kreise.size();i++){
                     writer.write("Has Next" + System.lineSeparator()); // Status
                     writer.write(kreise.get(i).getX() + "\n");
@@ -49,7 +49,6 @@ public class KugelServer {
                 writer.newLine();
                 writer.flush();
                 c.close();
-                // Bad practice!
                 p.close();
             } catch (IOException e) {
                 System.out.println(e.getMessage());

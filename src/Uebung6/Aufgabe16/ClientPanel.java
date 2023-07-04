@@ -18,6 +18,7 @@ public class ClientPanel extends JPanel {
     }
 
     public void addKreis(double kx, double ky, Color c) {
+        // Füge Kreise zu dem Array hinzu
         kreise.add(new KreisSaver(kx, ky, c));
     }
 }

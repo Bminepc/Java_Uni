@@ -2,6 +2,7 @@ package Uebung6.Aufgabe16;
 
 import java.awt.*;
 
+// Hilfsklasse zum Abspeichern der Kreise mit x und y Koordinaten und der Farbe
 public class KreisSaver {
     private double x,y;
     private Color c;
