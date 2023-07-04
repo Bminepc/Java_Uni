@@ -17,15 +17,16 @@ public class KugelServer {
     private static int port = 52390;
 
     public static void main(String[] args) throws IOException {
-        // TODO Wo muss hier ein Lock für unsere Variable hin?
         ArrayList<Kreissaver> kreise = new ArrayList<>();
         ArrayList<ServerSocketManager> sockets = new ArrayList<>();
+        ArrayList<Integer> disconnectedClients = new ArrayList<>();
         ConnectionWasLost cwl = new ConnectionWasLost();
             try {
                 ServerSocket p = new ServerSocket(port);
                 while (true) {
                     Socket c = p.accept();
-                    sockets.add(new ServerSocketManager(c, kreise, cwl));
+                    disconnectedClients.add(1);
+                    sockets.add(new ServerSocketManager(c, kreise, cwl, disconnectedClients));
                     sockets.get(sockets.size() - 1).start();
                     for (int i = 0; i < sockets.size() - 1; i++) {
                         sockets.get(i).sendCircles();

@@ -19,11 +19,13 @@ public class ServerSocketManager extends Thread{
     private Random r = new Random();
     private int selfId = 0;
     private ConnectionWasLost cwl;
+    private ArrayList<Integer> disconnectedClients;
 
-    public ServerSocketManager(Socket socket, ArrayList<Kreissaver> kreise, ConnectionWasLost cwl){
+    public ServerSocketManager(Socket socket, ArrayList<Kreissaver> kreise, ConnectionWasLost cwl, ArrayList<Integer> disconnectedClients){
         this.socket = socket;
         this.kreise = kreise;
         this.cwl = cwl;
+        this.disconnectedClients = disconnectedClients;
     }
 
     private void sendFirstCircles(){
@@ -43,12 +45,14 @@ public class ServerSocketManager extends Thread{
             writer.write(x + "\n");
             writer.write(y + "\n");
             for(int i = 0; i < kreise.size();i++){
-                writer.write("Has Next" + System.lineSeparator()); // Status
-                writer.write(kreise.get(i).getX() + "\n");
-                writer.write(kreise.get(i).getY() + "\n");
-                writer.write(kreise.get(i).getColor().getRed() + "\n");
-                writer.write(kreise.get(i).getColor().getGreen() + "\n");
-                writer.write(kreise.get(i).getColor().getBlue() + "\n");
+                if(disconnectedClients.get(i) != -1) {
+                    writer.write("Has Next" + System.lineSeparator()); // Status
+                    writer.write(kreise.get(i).getX() + "\n");
+                    writer.write(kreise.get(i).getY() + "\n");
+                    writer.write(kreise.get(i).getColor().getRed() + "\n");
+                    writer.write(kreise.get(i).getColor().getGreen() + "\n");
+                    writer.write(kreise.get(i).getColor().getBlue() + "\n");
+                }
             }
             System.out.println("Have written to Client " + selfId);
             writer.newLine();
@@ -68,14 +72,16 @@ public class ServerSocketManager extends Thread{
 
                 writer.write("New Data");
                 for (int i = 0; i < kreise.size(); i++) {
-                    writer.write("Has Next" + System.lineSeparator()); // Status
-                    writer.write(kreise.get(i).getX() + "\n");
-                    writer.write(kreise.get(i).getY() + "\n");
-                    writer.write(kreise.get(i).getColor().getRed() + "\n");
-                    writer.write(kreise.get(i).getColor().getGreen() + "\n");
-                    writer.write(kreise.get(i).getColor().getBlue() + "\n");
+                    if(disconnectedClients.get(i) != -1) {
+                        writer.write("Has Next" + System.lineSeparator()); // Status
+                        writer.write(kreise.get(i).getX() + "\n");
+                        writer.write(kreise.get(i).getY() + "\n");
+                        writer.write(kreise.get(i).getColor().getRed() + "\n");
+                        writer.write(kreise.get(i).getColor().getGreen() + "\n");
+                        writer.write(kreise.get(i).getColor().getBlue() + "\n");
+                    }
                 }
-                System.out.println("Have written new to Client " + selfId);
+                System.out.println("Have written to new Client " + selfId);
                 writer.newLine();
                 writer.flush();
             } catch (IOException e) {
@@ -101,7 +107,7 @@ public class ServerSocketManager extends Thread{
             }
         } catch (IOException e) {
             System.out.println("Someone Disconnected " + selfId);
-            kreise.remove(selfId);
+            disconnectedClients.set(selfId,-1);
             isConnected = false;
             cwl.ConnectionLost();
         }
