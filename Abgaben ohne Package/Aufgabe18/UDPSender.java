@@ -1,5 +1,11 @@
-package Uebung6.Aufgabe18;
-
+/*************************************************************/
+/* Mathis Steinhage, Benjamin Wendt                          */
+/* Gruppe: Di10                                              */
+/* Uebungsblatt: 6, Aufgabe: 18                              */
+/* Thema: java.net, UDP                                      */
+/* Datum: 04.07.2023                                         */
+/* Status: lauffaehig                                        */
+/*************************************************************/
 import java.io.IOException;
 import java.net.*;
 

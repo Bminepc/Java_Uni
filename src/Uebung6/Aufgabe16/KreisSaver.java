@@ -2,11 +2,11 @@ package Uebung6.Aufgabe16;
 
 import java.awt.*;
 
-public class Kreissaver {
+public class KreisSaver {
     private double x,y;
     private Color c;
 
-    public Kreissaver(double x, double y, Color c){
+    public KreisSaver(double x, double y, Color c){
         this.x = x;
         this.y = y;
         this.c = c;
