@@ -16,12 +16,15 @@ public class KugelClient {
         JFrame frame = new JFrame("Kreis");
         ClientPanel panel = new ClientPanel();
         try {
-            Socket kugelSocket = new Socket("81.169.152.161", 52390);
+            //erstelle neues Socket
+            Socket kugelSocket = new Socket("localhost", 52390);
             InputStream clientIn = kugelSocket.getInputStream();
             InputStreamReader isr = new InputStreamReader(clientIn);
             BufferedReader reader = new BufferedReader(isr);
+            //lese X und Y Daten aus dem InputStream
             x = Integer.parseInt(reader.readLine());
             y = Integer.parseInt(reader.readLine());
+            //lese weitere Daten ein, solange weitere Daten verfügbar
             while (reader.readLine().equals("Has Next")) {
                 kx = Double.parseDouble(reader.readLine());
                 ky = Double.parseDouble(reader.readLine());
