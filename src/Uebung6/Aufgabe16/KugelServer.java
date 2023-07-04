@@ -31,6 +31,7 @@ public class KugelServer {
                 int y = 600;
                 double kx = r.nextDouble(50,550);
                 double ky = r.nextDouble(50,550);
+                //Zufallsfarbe wird erstellt
                 Color color = Color.getHSBColor(r.nextFloat(100), 0.9F, 0.8F);
                 kreise.add(new KreisSaver(kx,ky,color));
                 writer.write(x + "\n");
