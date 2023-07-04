@@ -14,8 +14,7 @@ import java.util.Random;
 public class ServerSocketManager extends Thread{
     private Boolean isConnected = true;
     private Socket socket;
-    private ArrayList<Kreissaver> kreise = new ArrayList<>();
-
+    private ArrayList<Kreissaver> kreise;
     private Random r = new Random();
     private int selfId = 0;
     private ConnectionWasLost cwl;
