@@ -11,6 +11,8 @@ public class Listhead<T> {
     private Listnode<T> start;
     private Listnode<T> end;
     private Listnode<T> current;
+    private int length = 0;
+    private int currentNumber = 0;
 
     /**
      * Konstruktor mit direkt einem Wert in der Liste
@@ -20,6 +22,8 @@ public class Listhead<T> {
         start = new Listnode<T>(value);
         current = start;
         end = start;
+        length = 1;
+        currentNumber = 1;
     }
 
     /**
@@ -31,17 +35,37 @@ public class Listhead<T> {
     }
 
     /**
-     * Nächste Zelle auswählen
+     * Getter für die Länge
+     * @return Länge der Liste
      */
-    public void advance(){
-        current = current.getnext();
+    public int length(){
+        return length;
+    }
+
+    /**
+     * Nächste Zelle auswählen
+     * @throws Exception Out Of Bounds
+     */
+    public void advance() throws Exception {
+        if(currentNumber<length){
+            current = current.getnext();
+            currentNumber++;
+        }else {
+            throw new Exception("Du bist am Ende der Liste.");
+        }
     }
 
     /**
      * Letzte Zelle auswählen
+     * @throws Exception Out Of Bounds
      */
-    public void retreat(){
-        current = current.getPrevious();
+    public void retreat() throws Exception {
+        if(currentNumber>1) {
+            current = current.getPrevious();
+            currentNumber--;
+        }else {
+            throw new Exception("Du bist am Anfang der Liste.");
+        }
     }
 
     /**
@@ -51,5 +75,24 @@ public class Listhead<T> {
     public void add(T value){
         end.setNext(new Listnode<T>(value, end));
         end = end.getnext();
+        length++;
+    }
+
+    /**
+     * Gibt den Wert an der gewünschten Stelle zurück
+     * @param pos Gewünschte Stelle
+     * @return Wert an der gewünschten Stelle
+     * @throws Exception Out Of Bounds
+     */
+    public T getSpecific(int pos) throws Exception {
+        if(pos < length && pos >= 0) {
+            Listnode<T> temp = start;
+            for (int i = 0; i < pos; i++) {
+                temp = temp.getnext();
+            }
+            return temp.get();
+        }else {
+            throw new Exception("Diese Stelle git es nicht in der Liste");
+        }
     }
 }

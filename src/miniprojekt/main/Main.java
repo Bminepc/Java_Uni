@@ -9,13 +9,18 @@ public class Main {
         L.add(2);
         L.add(3);
 
-        System.out.println(L.getCurrent());
-        L.advance();
-        System.out.println(L.getCurrent());
-        L.advance();
-        System.out.println(L.getCurrent());
-        L.retreat();
-        System.out.println(L.getCurrent());
+        try {
+            System.out.println(L.getCurrent());
+            L.advance();
+            System.out.println(L.getCurrent());
+            L.advance();
+            System.out.println(L.getCurrent());
+            L.retreat();
+            System.out.println(L.getCurrent());
+            System.out.println(L.getSpecific(2));
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
 
     }
 
