@@ -2,6 +2,8 @@ package Uebung6.Aufgabe17.Client;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,8 +17,9 @@ public class KugelClient {
         Color c = new Color(0,0,0);
         JFrame frame = new JFrame("Kreis");
         ClientPanel panel = new ClientPanel();
+        Socket kugelSocket = new Socket();
         try {
-            Socket kugelSocket = new Socket("localhost", 52390);
+            kugelSocket = new Socket("localhost", 52392);
             InputStream clientIn = kugelSocket.getInputStream();
             InputStreamReader isr = new InputStreamReader(clientIn);
             BufferedReader reader = new BufferedReader(isr);
@@ -36,6 +39,18 @@ public class KugelClient {
         }
         panel.setSize(x,y);
         panel.repaint();
+        Socket finalKugelSocket = kugelSocket;
+        frame.addWindowStateListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                super.windowClosing(e);
+                try {
+                    finalKugelSocket.close();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
         frame.add(panel);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setResizable(false);

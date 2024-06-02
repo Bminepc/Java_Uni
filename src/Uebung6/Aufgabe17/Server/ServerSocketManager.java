@@ -3,10 +3,7 @@ package Uebung6.Aufgabe17.Server;
 import Uebung6.Aufgabe17.Assets.Kreissaver;
 
 import java.awt.*;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Random;
@@ -94,7 +91,7 @@ public class ServerSocketManager extends Thread{
         super.run();
         System.out.println("Ich habe einen Socket bekommen " + selfId);
         sendFirstCircles();
-        try{
+        try(InputStream s = socket.getInputStream()){
             int temp = cwl.getConnectionWasLost();
             while (true){
                 if(temp < cwl.getConnectionWasLost()){
@@ -102,7 +99,7 @@ public class ServerSocketManager extends Thread{
                     temp = cwl.getConnectionWasLost();
                     sendCircles();
                 }
-                socket.getInputStream().read();
+                s.read();
             }
         } catch (IOException e) {
             System.out.println("Someone Disconnected " + selfId);

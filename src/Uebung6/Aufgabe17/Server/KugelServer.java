@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class KugelServer {
 
-    private static int port = 52390;
+    private static int port = 52392;
 
     public static void main(String[] args) throws IOException {
         ArrayList<Kreissaver> kreise = new ArrayList<>();
