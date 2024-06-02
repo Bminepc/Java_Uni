@@ -1,6 +1,3 @@
-package Uebung6.Aufgabe17.Client;
-
-import Uebung6.Aufgabe17.Assets.Kreissaver;
 
 import java.awt.*;
 import java.io.BufferedReader;

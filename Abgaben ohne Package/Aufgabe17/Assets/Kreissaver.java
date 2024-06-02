@@ -1,4 +1,3 @@
-package Uebung6.Aufgabe17.Assets;
 
 import java.awt.*;
 
