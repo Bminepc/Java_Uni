@@ -1,4 +1,3 @@
-package Uebung6.Aufgabe17.Client;
 
 import javax.swing.*;
 import java.awt.*;
