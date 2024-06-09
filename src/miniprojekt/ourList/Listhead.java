@@ -79,6 +79,14 @@ public class Listhead<T> {
     }
 
     /**
+     * Löscht den letzten Wert in der Liste
+     */
+    public void pop(){
+        end.getPrevious().setNext(null);
+        end = end.getPrevious();
+    }
+
+    /**
      * Gibt den Wert an der gewünschten Stelle zurück
      * @param pos Gewünschte Stelle
      * @return Wert an der gewünschten Stelle
