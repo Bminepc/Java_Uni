@@ -1,6 +1,6 @@
 package miniprojekt.spaceobjects;
 
-public class Moon extends Spaceobject{
+public class Moon extends Spaceobject {
 
     private double reflectiveCoefficient;
 
@@ -19,7 +19,7 @@ public class Moon extends Spaceobject{
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return super.toString() + ", ReflectiveCoefficient: " + reflectiveCoefficient;
     }
 

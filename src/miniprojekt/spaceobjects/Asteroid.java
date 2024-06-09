@@ -3,7 +3,7 @@ package miniprojekt.spaceobjects;
 import miniprojekt.tools.Coordinate;
 import miniprojekt.tools.Vector;
 
-public class Asteroid extends Spaceobject{
+public class Asteroid extends Spaceobject {
 
     private Vector vector;
 
@@ -13,17 +13,17 @@ public class Asteroid extends Spaceobject{
         this.position = vector.getStart();
     }
 
-    public Vector getVector(){
+    public Vector getVector() {
         return vector;
     }
 
     @Override
-    protected Coordinate calcPos(){
+    protected Coordinate calcPos() {
         return null;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return super.toString() + ", Movementvector: " + vector;
     }
 

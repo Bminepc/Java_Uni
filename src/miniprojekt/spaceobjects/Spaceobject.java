@@ -54,15 +54,15 @@ public abstract class Spaceobject {
     }
 
     public int getCenter() {
-        return orbits != null ? orbits.getCenter() - getSize(): getSize() / 4;
+        return orbits != null ? orbits.getCenter() - getSize() : getSize() / 4;
     }
 
-    protected Coordinate calcPos(){
+    protected Coordinate calcPos() {
         CirclePosition cp = new CirclePosition();
         return cp.calcRandomPosition(orbit, this.orbits.getPos());
     }
 
-    public Coordinate getPos(){
+    public Coordinate getPos() {
         return this.position;
     }
 

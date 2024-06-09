@@ -9,8 +9,8 @@ public class Gasplanet extends Planet {
         density = 1;
     }
 
-    public Gasplanet(String name, Spaceobject orbits, double size,int orbit, Material material, double density) {
-        super(name, orbits, size,orbit, material);
+    public Gasplanet(String name, Spaceobject orbits, double size, int orbit, Material material, double density) {
+        super(name, orbits, size, orbit, material);
         this.density = density;
     }
 

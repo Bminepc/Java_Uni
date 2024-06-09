@@ -10,7 +10,7 @@ public class Spaceframe extends JFrame {
 
     private Spacepanel sp;
 
-    public Spaceframe(Listhead<Spaceobject> spaceobjects){
+    public Spaceframe(Listhead<Spaceobject> spaceobjects) {
         super("Spacepainter");
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);

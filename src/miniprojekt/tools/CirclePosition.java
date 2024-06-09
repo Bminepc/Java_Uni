@@ -4,12 +4,12 @@ import java.util.Random;
 
 public class CirclePosition {
 
-    public Coordinate calcRandomPosition(int radius, Coordinate start){
+    public Coordinate calcRandomPosition(int radius, Coordinate start) {
         Random r = new Random();
-        return calcPosition(radius, r.nextInt(0,356), start);
+        return calcPosition(radius, r.nextInt(0, 356), start);
     }
 
-    public Coordinate calcPosition(int radius, int angle, Coordinate start){
+    public Coordinate calcPosition(int radius, int angle, Coordinate start) {
         //Formel für Kreis (x-start.getX())^2+(y-start.getY())^2 = radius
 
         // Ganz ehrlich? ChatGPT!
@@ -28,13 +28,13 @@ public class CirclePosition {
             for (double sign : new double[]{1, -1}) {
                 double x = (-B + sign * sqrtD) / (2 * A);
                 double y = m * x + c;
-                return new Coordinate((int) x,(int) y);
+                return new Coordinate((int) x, (int) y);
             }
         } else {
             System.out.println("Keine reellen Schnittpunkte.");
         }
 
-        return new Coordinate(0,0);
+        return new Coordinate(0, 0);
     }
 
 }
