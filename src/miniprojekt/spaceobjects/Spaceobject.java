@@ -48,7 +48,7 @@ public abstract class Spaceobject {
     }
 
     public int getCenter() {
-        return orbits != null ? (getSize() / 4) + orbits.getCenter() : getSize() / 4;
+        return orbits != null ? orbits.getCenter() - getSize(): getSize() / 4;
     }
 
     @Override
