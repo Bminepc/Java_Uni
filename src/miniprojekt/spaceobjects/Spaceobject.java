@@ -1,11 +1,15 @@
 package miniprojekt.spaceobjects;
 
+import miniprojekt.tools.CirclePosition;
+import miniprojekt.tools.Coordinate;
+
 public abstract class Spaceobject {
 
     protected Spaceobject orbits;
     protected double size;
     protected String name;
     protected int orbit;
+    protected Coordinate position;
 
     public Spaceobject() {
         orbits = null;
@@ -22,6 +26,7 @@ public abstract class Spaceobject {
         this.orbits = orbits;
         this.size = size;
         this.orbit = orbit;
+        position = calcPos();
     }
 
     public Spaceobject(String name, Spaceobject orbits, double size) {
@@ -29,6 +34,7 @@ public abstract class Spaceobject {
         this.orbits = orbits;
         this.size = size;
         this.orbit = orbit;
+        position = calcPos();
     }
 
     public int getSize() {
@@ -49,6 +55,15 @@ public abstract class Spaceobject {
 
     public int getCenter() {
         return orbits != null ? orbits.getCenter() - getSize(): getSize() / 4;
+    }
+
+    protected Coordinate calcPos(){
+        CirclePosition cp = new CirclePosition();
+        return cp.calcRandomPosition(orbit, this.orbits.getPos());
+    }
+
+    public Coordinate getPos(){
+        return this.position;
     }
 
     @Override

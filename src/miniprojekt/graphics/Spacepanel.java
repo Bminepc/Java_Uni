@@ -2,6 +2,8 @@ package miniprojekt.graphics;
 
 import miniprojekt.ourList.Listhead;
 import miniprojekt.spaceobjects.*;
+import miniprojekt.tools.CirclePosition;
+import miniprojekt.tools.Coordinate;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,9 +11,11 @@ import java.awt.*;
 public class Spacepanel extends JPanel {
 
     private Listhead<Spaceobject> spaceobjects;
+    private CirclePosition circlePosition;
 
     public Spacepanel(Listhead<Spaceobject> spaceobjects) {
         this.spaceobjects = spaceobjects;
+        this.circlePosition = new CirclePosition();
     }
 
     @Override
@@ -50,32 +54,32 @@ public class Spacepanel extends JPanel {
     }
 
     public Graphics paintStar(Star s, Graphics g) {
-            g.setColor(Color.ORANGE);
-            g.fillOval(500, 500, s.getSize(), s.getSize());
-            g.setColor(Color.WHITE);
-            g.drawString(s.getName(), 500, 500);
+        g.setColor(Color.ORANGE);
+        g.fillOval(s.getPos().getX(), s.getPos().getY(), s.getSize(), s.getSize());
+        g.setColor(Color.WHITE);
+        g.drawString(s.getName(), s.getPos().getX(), s.getPos().getY());
         return g;
     }
 
     public Graphics paintMatterplanet(Matterplanet m, Graphics g) {
         g.setColor(m.getMaterial().getColor());
-        g.fillOval(500 - m.getOrbit(), 500 + m.getCenter(), m.getSize(), m.getSize());
+        g.fillOval(m.getPos().getX(), m.getPos().getY(), m.getSize(), m.getSize());
         if (m.isInhabitable()) {
             g.setColor(Color.WHITE);
         } else {
             g.setColor(Color.BLACK);
         }
-        g.fillOval(500 - m.getOrbit() + m.getSize() / 4, 500 + m.getSize() / 4 + m.getCenter(), m.getSize() / 2, m.getSize() / 2);
+        g.fillOval(m.getPos().getX() + m.getSize() / 4, m.getPos().getY() + m.getSize() / 4, m.getSize() / 2, m.getSize() / 2);
         g.setColor(Color.WHITE);
-        g.drawString(m.getName(), 500 - m.getOrbit(), 500 + m.getCenter());
+        g.drawString(m.getName(), m.getPos().getX(), m.getPos().getY());
         return g;
     }
 
     public Graphics paintGasplanet(Gasplanet p, Graphics g) {
-        g.setColor(mapOpacity(p.getMaterial().getColor(),p.getDensity()));
-        g.fillOval(500 - p.getOrbit(), 500 + p.getCenter(), p.getSize(), p.getSize());
+        g.setColor(mapOpacity(p.getMaterial().getColor(), p.getDensity()));
+        g.fillOval(p.getPos().getX(), p.getPos().getY(), p.getSize(), p.getSize());
         g.setColor(Color.WHITE);
-        g.drawString(p.getName(), 500 - p.getOrbit(), 500 + p.getCenter());
+        g.drawString(p.getName(), p.getPos().getX(), p.getPos().getY());
         return g;
     }
 
@@ -85,10 +89,10 @@ public class Spacepanel extends JPanel {
     }
 
     public Graphics paintMoon(Moon m, Graphics g) {
-        g.setColor(mapOpacity(Color.WHITE,m.getReflectiveCoefficient()));
-        g.fillOval(500-m.getOrbits().getOrbit() - m.getOrbit(), 500 + m.getCenter(), m.getSize(), m.getSize());
+        g.setColor(mapOpacity(Color.WHITE, m.getReflectiveCoefficient()));
+        g.fillOval(m.getPos().getX(), m.getPos().getY(), m.getSize(), m.getSize());
         g.setColor(Color.WHITE);
-        g.drawString(m.getName(), 500-m.getOrbits().getOrbit() - m.getOrbit(), 500 + m.getCenter());
+        g.drawString(m.getName(), m.getPos().getX(), m.getPos().getY());
         return g;
     }
 
