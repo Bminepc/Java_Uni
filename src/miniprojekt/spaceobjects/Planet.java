@@ -4,8 +4,8 @@ public abstract class Planet extends Spaceobject{
 
     private Material material;
 
-    public Planet(String name, Spaceobject orbits, double size, Material material){
-        super(name, orbits, size);
+    public Planet(String name, Spaceobject orbits, double size, int orbit, Material material){
+        super(name, orbits, size, orbit);
         this.material = material;
     }
 

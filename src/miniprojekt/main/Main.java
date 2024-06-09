@@ -6,8 +6,8 @@ import miniprojekt.spaceobjects.*;
 public class Main {
 
     public static void main(String[] args) {
-        Listhead<Spaceobject> spaceobjects = new Listhead<>(new Star("Sonne", null, 10.0,10.0));
-        spaceobjects.add(new Matterplanet("Erde", spaceobjects.getCurrent(), 2.0, Material.STONE, 700000000));
+        Listhead<Spaceobject> spaceobjects = new Listhead<>(new Star("Sonne", null, 10.0,0,10.0));
+        spaceobjects.add(new Matterplanet("Erde", spaceobjects.getCurrent(), 2.0,5, Material.STONE, 700000000));
 
         try {
             System.out.println(spaceobjects.getSpecific(1));

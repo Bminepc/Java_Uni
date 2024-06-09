@@ -6,8 +6,8 @@ public class Asteroid extends Spaceobject{
 
     private Vector vector;
 
-    public Asteroid(String name, Vector vector, double size) {
-        super(name, null, size);
+    public Asteroid(String name,Spaceobject orbits, Vector vector, double size) {
+        super(name, orbits, size);
         this.vector = vector;
     }
 

@@ -4,9 +4,14 @@ public class Moon extends Spaceobject{
 
     private double reflectiveCoefficient;
 
-    public Moon(String name, Spaceobject orbits, double size, double reflectiveCoefficient) {
-        super(name, orbits, size);
+    public Moon(String name, Spaceobject orbits, double size, int orbit, double reflectiveCoefficient) {
+        super(name, orbits, size, orbit);
         this.reflectiveCoefficient = reflectiveCoefficient;
+    }
+
+    public Moon(String name, Spaceobject orbits, double size, int orbit) {
+        super(name, orbits, size, orbit);
+        this.reflectiveCoefficient = 1;
     }
 
     @Override
