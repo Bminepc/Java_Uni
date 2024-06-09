@@ -3,7 +3,6 @@ package miniprojekt.graphics;
 import miniprojekt.ourList.Listhead;
 import miniprojekt.spaceobjects.*;
 import miniprojekt.tools.CirclePosition;
-import miniprojekt.tools.Coordinate;
 
 import javax.swing.*;
 import java.awt.*;
@@ -84,7 +83,11 @@ public class Spacepanel extends JPanel {
     }
 
     public Graphics paintAsteroid(Asteroid a, Graphics g) {
-
+        g.setColor(Color.MAGENTA);
+        g.fillOval(a.getPos().getX(), a.getPos().getY(), a.getSize(), a.getSize());
+        g.drawLine(a.getVector().getStart().getX(),a.getVector().getStart().getY(),a.getVector().getEnd().getX(),a.getVector().getEnd().getY());
+        g.setColor(Color.WHITE);
+        g.drawString(a.getName(), a.getPos().getX(), a.getPos().getY());
         return g;
     }
 
