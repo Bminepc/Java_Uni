@@ -94,11 +94,11 @@ public class Listhead<T> {
      */
     public T getSpecific(int pos) throws Exception {
         if(pos < length && pos >= 0) {
-            Listnode<T> temp = start;
+            Listnode temp = start;
             for (int i = 0; i < pos; i++) {
                 temp = temp.getnext();
             }
-            return temp.get();
+            return (T) temp.get();
         }else {
             throw new Exception("Diese Stelle git es nicht in der Liste");
         }
