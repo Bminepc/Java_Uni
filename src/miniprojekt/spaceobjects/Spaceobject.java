@@ -2,10 +2,10 @@ package miniprojekt.spaceobjects;
 
 public abstract class Spaceobject {
 
-    private Spaceobject orbits;
-    private double size;
-    private String name;
-    private int orbit;
+    protected Spaceobject orbits;
+    protected double size;
+    protected String name;
+    protected int orbit;
 
     public Spaceobject() {
         orbits = null;
@@ -14,7 +14,6 @@ public abstract class Spaceobject {
     }
 
     /**
-     *
      * @param orbits
      * @param size
      */
@@ -32,9 +31,29 @@ public abstract class Spaceobject {
         this.orbit = orbit;
     }
 
+    public int getSize() {
+        return (int) size;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getOrbit() {
+        return orbit;
+    }
+
+    public Spaceobject getOrbits() {
+        return orbits;
+    }
+
+    public int getCenter() {
+        return orbits != null ? (getSize() / 4) + orbits.getCenter() : getSize() / 4;
+    }
+
     @Override
     public String toString() {
-        return "Name: " + name + ", Size: " + size + ", Orbits: (" + orbits +"), Orbit: " + orbit;
+        return "Name: " + name + ", Size: " + size + ", Orbits: (" + orbits + "), Orbit: " + orbit;
     }
 
 }

@@ -13,5 +13,9 @@ public abstract class Planet extends Spaceobject{
     public String toString(){
         return super.toString() + ", Material: " + material;
     }
+    public Material getMaterial() {
+        return material;
+    }
+
 
 }

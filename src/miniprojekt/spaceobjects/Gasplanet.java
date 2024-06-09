@@ -14,6 +14,10 @@ public class Gasplanet extends Planet {
         this.density = density;
     }
 
+    public double getDensity() {
+        return density;
+    }
+
     @Override
     public String toString() {
         return super.toString() + ", Density: " + density;

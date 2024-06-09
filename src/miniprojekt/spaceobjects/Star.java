@@ -4,9 +4,13 @@ public class Star extends Spaceobject{
 
     private double luminosity;
 
-    public Star(String name, Spaceobject orbits, double size, int orbit, double luminosity) {
-        super(name, orbits, size, orbit);
+    public Star(String name,double size, double luminosity) {
+        super(name, null, size, 0);
         this.luminosity = luminosity;
+    }
+
+    public Boolean orbits(){
+        return this.orbits != null;
     }
 
     @Override

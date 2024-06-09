@@ -11,6 +11,10 @@ public class Matterplanet extends Planet {
         this.inhabitable = population > 0;
     }
 
+    public Boolean isInhabitable() {
+        return inhabitable;
+    }
+
     @Override
     public String toString() {
         return super.toString() + ", inhabitable: " + inhabitable + ", population: " + population;

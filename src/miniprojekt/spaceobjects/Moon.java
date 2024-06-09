@@ -14,6 +14,10 @@ public class Moon extends Spaceobject{
         this.reflectiveCoefficient = 1;
     }
 
+    public double getReflectiveCoefficient() {
+        return reflectiveCoefficient;
+    }
+
     @Override
     public String toString(){
         return super.toString() + ", ReflectiveCoefficient: " + reflectiveCoefficient;
