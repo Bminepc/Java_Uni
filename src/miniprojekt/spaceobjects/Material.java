@@ -1,5 +1,7 @@
 package miniprojekt.spaceobjects;
 
+import java.awt.*;
+
 public enum Material {
     STONE,
     WATER,
@@ -18,6 +20,18 @@ public enum Material {
             case IRON -> "Iron";
             case COPPER -> "Copper";
             case GOLD -> "Gold";
+        };
+    }
+
+    public Color getColor() {
+        return switch (this){
+            case STONE -> Color.BLUE;
+            case WATER -> Color.CYAN;
+            case HYDROGEN -> Color.PINK;
+            case HELIUM -> Color.MAGENTA;
+            case IRON -> Color.RED;
+            case COPPER -> Color.GREEN;
+            case GOLD -> Color.YELLOW;
         };
     }
 }
