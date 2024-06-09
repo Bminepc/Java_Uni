@@ -25,4 +25,9 @@ public class Vector {
     public Coordinate getEnd() {
         return end;
     }
+
+    @Override
+    public String toString() {
+        return "(" + start.toString() + "," + end.toString() + ")";
+    }
 }
