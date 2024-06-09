@@ -2,8 +2,8 @@ package miniprojekt.tools;
 
 public class Vector {
 
-    public Coordinate start;
-    public Coordinate end;
+    private Coordinate start;
+    private Coordinate end;
 
     public Vector(Coordinate start, Coordinate end) {
         this.start = start;
