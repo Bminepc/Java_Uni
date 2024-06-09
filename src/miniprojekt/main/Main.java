@@ -1,27 +1,18 @@
 package miniprojekt.main;
 
 import miniprojekt.ourList.*;
+import miniprojekt.spaceobjects.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        Listhead<Integer> L = new Listhead<>(1);
-        L.add(2);
-        L.add(3);
+        Listhead<Spaceobject> spaceobjects = new Listhead<>(new Star("Sonne", null, 10.0,10.0));
+        spaceobjects.add(new Matterplanet("Erde", spaceobjects.getCurrent(), 2.0, Material.STONE, 700000000));
 
         try {
-            System.out.println(L.getCurrent());
-            L.advance();
-            System.out.println(L.getCurrent());
-            L.advance();
-            System.out.println(L.getCurrent());
-            L.retreat();
-            System.out.println(L.getCurrent());
-            System.out.println(L.getSpecific(2));
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-
+            System.out.println(spaceobjects.getSpecific(1));
+            System.out.println(spaceobjects.getCurrent());
+        }catch (Exception _){};
     }
 
 }
