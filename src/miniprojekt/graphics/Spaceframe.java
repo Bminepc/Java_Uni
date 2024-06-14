@@ -6,6 +6,8 @@ import miniprojekt.spaceobjects.Spaceobject;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Spaceframe extends JFrame {
 
@@ -13,16 +15,31 @@ public class Spaceframe extends JFrame {
 
     public Spaceframe(Listhead<Spaceobject> spaceobjects) {
         super("Spacepainter");
+        Animator animator = new Animator(spaceobjects,this);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         sp = new Spacepanel(spaceobjects);
         setLayout(new BorderLayout());
         add(sp, BorderLayout.CENTER);
+        JMenuBar mb = new JMenuBar();
+        JMenu menu = new JMenu("Menü");
+        JMenuItem startStop = new JMenuItem("Start / Stop");
+        startStop.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (animator.annimating()){
+                    animator.stopanimate();
+                }else {
+                    animator.startanimate();
+                }
+            }
+        });
+        menu.add(startStop);
+        mb.add(menu);
+        this.setJMenuBar(mb);
         setSize(1000, 1000);
-        Animator animator = new Animator(spaceobjects,this);
         animator.start();
-        animator.startanimate();
         setVisible(true);
     }
 }

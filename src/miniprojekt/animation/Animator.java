@@ -16,6 +16,10 @@ public class Animator extends Thread {
         animate = false;
     }
 
+    public Boolean annimating(){
+        return animate;
+    }
+
     public void startanimate(){
         animate = true;
     }
@@ -35,11 +39,11 @@ public class Animator extends Thread {
                     }
                 }
                 spaceframe.repaint();
-                try {
-                    sleep(100);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+            }
+            try {
+                sleep(100);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
         }
     }

@@ -30,8 +30,8 @@ public abstract class Spaceobject {
         this.orbits = orbits;
         this.size = size;
         this.orbit = orbit;
+        angle = new Random().nextInt(0,360);
         position = calcPos();
-        angle = new Random().nextInt(0,365);
     }
 
 
@@ -65,7 +65,7 @@ public abstract class Spaceobject {
 
     protected Coordinate calcPos() {
         CirclePosition cp = new CirclePosition();
-        return cp.calcRandomPosition(orbit, this.orbits.getPos());
+        return cp.calcPosition(orbit, angle, this.orbits.getPos());
     }
 
     public Coordinate getPos() {
