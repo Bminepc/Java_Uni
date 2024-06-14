@@ -72,11 +72,10 @@ public abstract class Spaceobject {
         return this.position;
     }
 
-    public Boolean advance() {
+    public void advance() {
         CirclePosition cp = new CirclePosition();
-        angle = (angle + 1) % 356;
+        angle = (angle + 1) % 360;
         position = cp.calcPosition(orbit, angle, this.orbits.getPos());
-        return false;
     }
 
     @Override
