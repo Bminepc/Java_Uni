@@ -1,5 +1,6 @@
 package miniprojekt.graphics;
 
+import miniprojekt.animation.Animator;
 import miniprojekt.ourList.Listhead;
 import miniprojekt.spaceobjects.Spaceobject;
 
@@ -19,6 +20,9 @@ public class Spaceframe extends JFrame {
         setLayout(new BorderLayout());
         add(sp, BorderLayout.CENTER);
         setSize(1000, 1000);
+        Animator animator = new Animator(spaceobjects,this);
+        animator.start();
+        animator.startanimate();
         setVisible(true);
     }
 }

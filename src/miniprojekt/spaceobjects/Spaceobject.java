@@ -3,6 +3,8 @@ package miniprojekt.spaceobjects;
 import miniprojekt.tools.CirclePosition;
 import miniprojekt.tools.Coordinate;
 
+import java.util.Random;
+
 public abstract class Spaceobject {
 
     protected Spaceobject orbits;
@@ -10,11 +12,13 @@ public abstract class Spaceobject {
     protected String name;
     protected int orbit;
     protected Coordinate position;
+    private int angle;
 
     public Spaceobject() {
         orbits = null;
         size = 1;
         orbit = 1;
+        angle = 0;
     }
 
     /**
@@ -27,13 +31,15 @@ public abstract class Spaceobject {
         this.size = size;
         this.orbit = orbit;
         position = calcPos();
+        angle = new Random().nextInt(0,365);
     }
+
 
     public Spaceobject(String name, Spaceobject orbits, double size) {
         this.name = name;
         this.orbits = orbits;
         this.size = size;
-        this.orbit = orbit;
+        this.orbit = 0;
         position = calcPos();
     }
 
@@ -64,6 +70,13 @@ public abstract class Spaceobject {
 
     public Coordinate getPos() {
         return this.position;
+    }
+
+    public Boolean advance() {
+        CirclePosition cp = new CirclePosition();
+        angle = (angle + 1) % 356;
+        position = cp.calcPosition(orbit, angle, this.orbits.getPos());
+        return false;
     }
 
     @Override

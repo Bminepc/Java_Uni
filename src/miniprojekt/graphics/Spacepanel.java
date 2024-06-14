@@ -2,7 +2,6 @@ package miniprojekt.graphics;
 
 import miniprojekt.ourList.Listhead;
 import miniprojekt.spaceobjects.*;
-import miniprojekt.tools.CirclePosition;
 
 import javax.swing.*;
 import java.awt.*;

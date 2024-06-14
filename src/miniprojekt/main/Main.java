@@ -1,5 +1,6 @@
 package miniprojekt.main;
 
+import miniprojekt.animation.Animator;
 import miniprojekt.graphics.Spaceframe;
 import miniprojekt.ourList.Listhead;
 import miniprojekt.spaceobjects.*;
