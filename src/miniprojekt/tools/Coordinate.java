@@ -57,6 +57,12 @@ public class Coordinate {
     public void setY(int y) {
         this.y = y;
     }
+    public Boolean equals(Coordinate t){
+        if(t.getX() == this.getX() && t.getY() == this.getY()){
+            return true;
+        }
+        return false;
+    }
 
     @Override
     public String toString() {
