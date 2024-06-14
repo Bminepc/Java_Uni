@@ -10,11 +10,9 @@ import java.awt.*;
 public class Spacepanel extends JPanel {
 
     private Listhead<Spaceobject> spaceobjects;
-    private CirclePosition circlePosition;
 
     public Spacepanel(Listhead<Spaceobject> spaceobjects) {
         this.spaceobjects = spaceobjects;
-        this.circlePosition = new CirclePosition();
     }
 
     @Override
