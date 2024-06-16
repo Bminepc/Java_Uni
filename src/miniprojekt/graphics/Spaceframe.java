@@ -1,6 +1,7 @@
 package miniprojekt.graphics;
 
 import miniprojekt.animation.Animator;
+import miniprojekt.graphics.create.Createframe;
 import miniprojekt.ourList.Listhead;
 import miniprojekt.spaceobjects.Spaceobject;
 
@@ -35,7 +36,15 @@ public class Spaceframe extends JFrame {
                 }
             }
         });
+        JMenuItem create = new JMenuItem("Create");
+        create.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Createframe c = new Createframe(spaceobjects);
+            }
+        });
         menu.add(startStop);
+        menu.add(create);
         mb.add(menu);
         this.setJMenuBar(mb);
         setSize(1000, 1000);
