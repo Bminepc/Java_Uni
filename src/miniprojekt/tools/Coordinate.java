@@ -69,4 +69,10 @@ public class Coordinate {
         return "(" + x + ", " + y + ")";
     }
 
+    public Boolean isNear(Coordinate t){
+        if(this.equals(t)) return true;
+        if(this.x < t.getX() + 15 && this.x > t.getX()-15 && this.y < t.getY() + 15 && this.y > t.getY()-15) return true;
+        return false;
+    }
+
 }
