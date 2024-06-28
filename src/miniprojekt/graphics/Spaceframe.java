@@ -1,6 +1,8 @@
 package miniprojekt.graphics;
 
 import miniprojekt.animation.Animator;
+import miniprojekt.graphics.create.CreateMatterplanet;
+import miniprojekt.graphics.create.CreateMoon;
 import miniprojekt.graphics.create.Createframe;
 import miniprojekt.ourList.Listhead;
 import miniprojekt.spaceobjects.Spaceobject;
@@ -26,23 +28,28 @@ public class Spaceframe extends JFrame {
         JMenuBar mb = new JMenuBar();
         JMenu menu = new JMenu("Menü");
         JMenuItem startStop = new JMenuItem("Start / Stop");
-        startStop.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (animator.annimating()){
-                    animator.stopanimate();
-                }else {
-                    animator.startanimate();
-                }
+        startStop.addActionListener(e -> {
+            if (animator.annimating()){
+                animator.stopanimate();
+            }else {
+                animator.startanimate();
             }
         });
-        JMenuItem create = new JMenuItem("Create");
-        create.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Createframe c = new Createframe(spaceobjects);
-            }
+
+        JMenu create = new JMenu("Create");
+        // Moon
+        JMenuItem createMoon = new JMenuItem("Moon");
+        createMoon.addActionListener(e -> {
+            Createframe c = new CreateMoon(spaceobjects);
         });
+        create.add(createMoon);
+        // Matterplanet
+        JMenuItem createMatterplanet = new JMenuItem("Matterplanet");
+        createMoon.addActionListener(e -> {
+            Createframe c = new CreateMatterplanet(spaceobjects);
+        });
+        create.add(createMatterplanet);
+
         menu.add(startStop);
         menu.add(create);
         mb.add(menu);

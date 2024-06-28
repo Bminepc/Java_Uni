@@ -36,6 +36,11 @@ public class Listhead<T> {
         return current.get();
     }
 
+    public void reset(){
+        current = start;
+        currentNumber = 1;
+    }
+
     /**
      * Getter für die Länge
      * @return Länge der Liste

@@ -1,10 +1,15 @@
 package miniprojekt.graphics.create;
 
 import miniprojekt.ourList.Listhead;
+import miniprojekt.spaceobjects.Asteroid;
 import miniprojekt.spaceobjects.Spaceobject;
+import miniprojekt.tools.Coordinate;
+import miniprojekt.tools.Vector;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Createframe extends JFrame {
 
@@ -12,9 +17,11 @@ public class Createframe extends JFrame {
     protected JLabel nameL, sizeL, orbitL, orbitsL;
     protected JComboBox orbits;
     protected JButton enter;
+    protected Listhead<Spaceobject> spaceobject;
 
 
     public Createframe(Listhead<Spaceobject> spaceobjects) {
+        spaceobject = spaceobjects;
         name = new JTextField("Name", 35);
         nameL = new JLabel("Name:");
         size = new JTextField("Size", 5);
@@ -30,8 +37,15 @@ public class Createframe extends JFrame {
         orbitsL = new JLabel("Orbits:");
         orbit = new JTextField("Orbit", 10);
         orbitL = new JLabel("Orbit:");
+        enter = new JButton("CREATE");
+        enter.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                createObject();
+            }
+        });
 
         this.setLayout(new FlowLayout());
+        this.add(enter);
         this.add(nameL);
         this.add(name);
         this.add(sizeL);
@@ -43,5 +57,9 @@ public class Createframe extends JFrame {
         this.pack();
         this.setResizable(false);
         this.setVisible(true);
+    }
+
+    public void createObject(){
+        this.dispose();
     }
 }
