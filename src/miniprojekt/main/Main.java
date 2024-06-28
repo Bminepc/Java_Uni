@@ -18,6 +18,9 @@ public class Main {
         spaceobjects.add(new Gasplanet("Helo", spaceobjects.getCurrent(), 40, 230, Material.HELIUM));
         spaceobjects.add(new Gasplanet("Satrn", spaceobjects.getCurrent(), 40, 400, Material.HELIUM, 0.5));
         spaceobjects.add(new Asteroid("cb1", new Vector(new Coordinate(300, 300), new Coordinate(500, 500)), 10));
+        spaceobjects.add(new Asteroid("cb2", new Vector(new Coordinate(300, 300), new Coordinate(500, 300)), 10));
+        spaceobjects.add(new Asteroid("cb3", new Vector(new Coordinate(0, 0), new Coordinate(124, 327)), 10));
+        spaceobjects.add(new Asteroid("cb4", new Vector(new Coordinate(0, 0), new Coordinate(139, 336)), 10));
         try {
             spaceobjects.add(new Moon("Lunar", spaceobjects.getSpecific(1), 15, 40, 1));
         } catch (Exception e) {
