@@ -45,7 +45,7 @@ public class Spaceframe extends JFrame {
         create.add(createMoon);
         // Matterplanet
         JMenuItem createMatterplanet = new JMenuItem("Matterplanet");
-        createMoon.addActionListener(e -> {
+        createMatterplanet.addActionListener(e -> {
             Createframe c = new CreateMatterplanet(spaceobjects);
         });
         create.add(createMatterplanet);
