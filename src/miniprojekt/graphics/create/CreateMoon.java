@@ -21,17 +21,7 @@ public class CreateMoon extends Createframe{
 
     @Override
     public void createObject(){
-        Spaceobject temp = null;
-        spaceobject.reset();
-        do{
-            temp = spaceobject.getCurrent();
-            try {
-                spaceobject.advance();
-            } catch (Exception e) {
-                temp = null;
-            }
-        }while (temp != null && temp.getName() != orbits.getSelectedItem());
-        spaceobject.add(new Moon(name.getText(),temp, Double.parseDouble(size.getText()), Integer.parseInt(orbit.getText()), Double.parseDouble(reflectiveCoefficient.getText())));
+        spaceobject.add(new Moon(name.getText(),getOrbits(), Double.parseDouble(size.getText()), Integer.parseInt(orbit.getText()), Double.parseDouble(reflectiveCoefficient.getText())));
         this.dispose();
     }
 }

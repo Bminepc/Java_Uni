@@ -1,16 +1,12 @@
 package miniprojekt.graphics;
 
 import miniprojekt.animation.Animator;
-import miniprojekt.graphics.create.CreateMatterplanet;
-import miniprojekt.graphics.create.CreateMoon;
-import miniprojekt.graphics.create.Createframe;
+import miniprojekt.graphics.create.*;
 import miniprojekt.ourList.Listhead;
 import miniprojekt.spaceobjects.Spaceobject;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Spaceframe extends JFrame {
 
@@ -49,6 +45,18 @@ public class Spaceframe extends JFrame {
             Createframe c = new CreateMatterplanet(spaceobjects);
         });
         create.add(createMatterplanet);
+        // Gasplanet
+        JMenuItem createGasplanet = new JMenuItem("Gasplanet");
+        createGasplanet.addActionListener(e -> {
+            Createframe c = new CreateGasplanet(spaceobjects);
+        });
+        create.add(createGasplanet);
+        // Asteroid
+        JMenuItem createAsteroid = new JMenuItem("Asteroid");
+        createAsteroid.addActionListener(e -> {
+            Createframe c = new CreateAsteroid(spaceobjects);
+        });
+        create.add(createAsteroid);
 
         menu.add(startStop);
         menu.add(create);

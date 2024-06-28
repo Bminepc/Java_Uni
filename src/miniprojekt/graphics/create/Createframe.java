@@ -62,4 +62,18 @@ public class Createframe extends JFrame {
     public void createObject(){
         this.dispose();
     }
+
+    public Spaceobject getOrbits(){
+        Spaceobject temp = null;
+        spaceobject.reset();
+        do{
+            temp = spaceobject.getCurrent();
+            try {
+                spaceobject.advance();
+            } catch (Exception e) {
+                temp = null;
+            }
+        }while (temp != null && temp.getName() != orbits.getSelectedItem());
+        return temp;
+    }
 }
