@@ -1,5 +1,7 @@
 package miniprojekt.ourList;
 
+import java.util.ArrayList;
+
 /**
  * Custom Liste für meine Übungsgruppe
  * @author Benjamin Wendt
