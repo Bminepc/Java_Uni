@@ -1,18 +1,13 @@
-package miniprojekt.network;
+package miniprojekt.network.server;
 
 import miniprojekt.ourList.Listhead;
 import miniprojekt.spaceobjects.*;
 import miniprojekt.tools.Coordinate;
 import miniprojekt.tools.Vector;
 
-public class Server implements Runnable{
+public class Server{
 
     private static Listhead<Spaceobject> spaceobjects;
-
-    @Override
-    public void run() {
-
-    }
 
     public static void main(String[] args) {
         spaceobjects = new Listhead<>(new Star("Sonne", 100.0, 10.0, 1000));
@@ -25,6 +20,10 @@ public class Server implements Runnable{
             spaceobjects.add(new Moon("Lunar", spaceobjects.getSpecific(1), 15, 40, 1));
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+
+        while (true){
+
         }
     }
 }
