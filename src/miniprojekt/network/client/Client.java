@@ -1,4 +1,4 @@
-package miniprojekt.network;
+package miniprojekt.network.client;
 
 import miniprojekt.graphics.Spaceframe;
 
@@ -10,7 +10,7 @@ public class Client {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                Spaceframe sf = new Spaceframe(spaceobjects);
+                Spaceframe sf = new Spaceframe(args[0]);
             }
         });
     }

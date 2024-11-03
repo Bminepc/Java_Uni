@@ -2,6 +2,7 @@ package miniprojekt.graphics;
 
 import miniprojekt.animation.Animator;
 import miniprojekt.graphics.create.*;
+import miniprojekt.network.client.ServerTalker;
 import miniprojekt.ourList.Listhead;
 import miniprojekt.spaceobjects.Spaceobject;
 
@@ -11,9 +12,12 @@ import java.awt.*;
 public class Spaceframe extends JFrame {
 
     private Spacepanel sp;
+    private Listhead<Spaceobject> spaceobjects;
 
-    public Spaceframe(Listhead<Spaceobject> spaceobjects) {
+    public Spaceframe(String host) {
         super("Spacepainter");
+        ServerTalker serverTalker = new ServerTalker(host);
+        spaceobjects = serverTalker.getSpaceobjects();
         Animator animator = new Animator(spaceobjects,this);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -63,6 +67,7 @@ public class Spaceframe extends JFrame {
         mb.add(menu);
         this.setJMenuBar(mb);
         setSize(1000, 1000);
+        serverTalker.start();
         animator.start();
         setVisible(true);
     }
